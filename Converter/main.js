@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-	var publicationsJSON = []
+	var publicationsJSON = [];
 		authorsJSON = [];
-	
+
 
 
 	$.get("http://localhost:3000/publications", function(data) {

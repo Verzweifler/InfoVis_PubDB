@@ -64,7 +64,7 @@ PubDBtoJSONConverter.prototype.buildPublicationJSON = function($pubObject, callb
 			// authors:
 			var authorsArray = _authors.split(',');
 
-			for (var i = 0; i < authorsArray.length; i++) {
+			for (i = 0; i < authorsArray.length; i++) {
 				var person = {};
 				person.name = authorsArray[i].replace(/(<([^>]+)>)/ig, ""); // remove html tags from name 
 				person.name = person.name.replace('\n\t\t', '');		// remove tabs etc.

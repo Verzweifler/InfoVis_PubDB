@@ -1,16 +1,26 @@
-<!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>PubDB Visualization</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+	<head>
+		<meta charset="utf-8">
 
-    <script>
-        // So much space for lovely D3 script!
+		<title>PubDB</title>
 
-    </script>
+		<script src="jquery1.11.1.js"></script>
+		<script src="../Converter/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 
-</body>
+	</head>
+	<body>
+		<img src="../Converter/assets/loading.gif" style="position: relative; display: block; top: 40%; margin: 0 auto;" alt="loading">
+
+		<h2 style="display: none;">Publications</h2>
+		<textarea style="display: none;" id="publications" rows="14" cols="150">
+			<!-- Publications JSON -->
+		</textarea>
+
+		<h2 style="display: none;">Authors</h2>
+		<textarea style="display: none;" id="authors" rows="14" cols="150">
+			<!-- Authors JSON -->
+		</textarea>
+
+	</body>
 </html>
