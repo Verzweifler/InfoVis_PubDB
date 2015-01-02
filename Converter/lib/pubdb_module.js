@@ -2,8 +2,9 @@
 PubDBtoJSONConverter = function() {
 	this.pubJson = [];
 	this.authorJson = [];
-	this.bibCount = 0;
-	this.authorsDone = false;
+	this.bibCount = 0;   		//counter for all found bib files
+	this.authorsDone = false;	//flag for handled authorsJson
+	this.bibCountDone = 0;  	//counter for handled bib files
 };
 
 
@@ -112,7 +113,6 @@ PubDBtoJSONConverter.prototype.buildPublicationJSON = function($pubObject, callb
 				if($contents.length){
 					for (var i = 0; i < $contents.find('a').length; i++) {
 						if(jQuery($contents.find('a')[i]).text() === 'bib'){
-							//console.log(jQuery($contents.find('a')[i]).attr('href'));
 							bibFileLink = jQuery($contents.find('a')[i]).attr('href');
 							_this.bibCount++;
 							//console.log(_this.bibCount);
@@ -212,6 +212,8 @@ PubDBtoJSONConverter.prototype.buildAuthorJSON = function(json, callback) {
 	for (var i = 0; i < keys.length; i++) {
 		this.authorJson.push(authorDictionary[keys[i]]);
 	};
+
+	this.authorsDone = true;
 
 	// callback, when finished
 	callback(this.authorJson);

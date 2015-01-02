@@ -83,6 +83,7 @@ request({"uri": basePath+dbPath, "content-type": "text/html;", "encoding": null}
 			//console.log(converter.bibCount);
 			converter.buildAuthorJSON(pubJson, function(data) {
 				console.log("Authors fertig");
+				//console.log(converter.authorsDone);
 				//console.log(data);
 				authorJson = data;
 				var counter = 0;
@@ -180,6 +181,10 @@ request({"uri": basePath+dbPath, "content-type": "text/html;", "encoding": null}
 									}
 								}
 							}
+							converter.bibCountDone++;//count to see if done
+							if(converter.bibCountDone == converter.bibCount){
+								console.log("Keywords fertig");
+							}
 						});
 					}
 				}
@@ -194,11 +199,20 @@ request({"uri": basePath+dbPath, "content-type": "text/html;", "encoding": null}
 
 // return all the data
 router.get('/mortifier', function(req, res) {
-	if(converter.bibCount == 0){
-		res.send("Not completed Loading, Zocken?");
+	var data = { bool : false ,msg : ''};
+	if(converter.authorsDone){ //false if authors not done
+		if(converter.bibCountDone == converter.bibCount){
+			data.bool = true;
+			data.msg = "Alles Fertig";
+			data.publications = pubJson;
+			data.authors = authorJson;
+		}else{
+			data.msg = "Fast fertig. Authors fertig, Keywords nicht";
+		}
 	}  else{
-		res.send("Alles fertig")
+		data.msg = "Nicht fertig. Bitte Seite neu laden.";
 	}
+	res.json(data);
 });
 
 app.use(router);
