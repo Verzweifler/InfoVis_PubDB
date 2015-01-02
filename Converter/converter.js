@@ -77,15 +77,16 @@ request({"uri": basePath+dbPath, "content-type": "text/html;", "encoding": null}
 		// convert html to json and return json to client
 		converter.buildPublicationJSON(jQuery(pubHtml), function(data) {
 			pubJson = data;
+			console.log("Anzahl Publikationen "+pubJson.length);
 			//res.json(data);
 			console.log("Die Daten sind jetzt in JSON Form");
 			//console.log(data);
 			//console.log(converter.bibCount);
 			converter.buildAuthorJSON(pubJson, function(data) {
 				console.log("Authors fertig");
-				//console.log(converter.authorsDone);
 				//console.log(data);
 				authorJson = data;
+				console.log("Anzahl Authoren "+authorJson.length);
 				var counter = 0;
 				var counter2 = 0;
 
