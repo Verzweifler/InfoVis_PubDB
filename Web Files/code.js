@@ -4,6 +4,30 @@
 
 // Receives an array of publication JSON objects each containing id and authors (and other stuff we won't need here)
 // Returns a JSON object containing each author together with a list of cooperations (authors and counter)
+/*
+Example for one publication with authors A, B, C:
+coopMap{
+    totalAuthorCount: 3
+    totalPublicationsCount: 1
+    authors: {
+        authorA {
+            totalPublications: 1
+            author B: 1
+            author C: 1
+        }
+         authorB {
+             totalPublications: 1
+             author A: 1
+             author C: 1
+         }
+         authorC {
+             totalPublications: 1
+             author A: 1
+             author B: 1
+         }
+        }
+}
+ */
 function buildCoopJSON(pubJSONArray){
 
     // Result containing counters for number of authors and publications and authors
