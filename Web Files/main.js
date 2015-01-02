@@ -38,11 +38,14 @@ $(document).ready(function() {
 			"url":"http://www.medien.ifi.lmu.de/team/daniel.buschek/"}
 			*/
 			authorsJSON = data.authors;
-			$('img').hide();
 			$('#publications').val(JSON.stringify(data.publications)).show();
 			$('#authors').val(JSON.stringify(data.authors)).show();
+
+			var coops = buildCoopJSON(data.publications);
+			$('#loadingImage').hide();
+			console.log(coops);
 		}else{
-			$('img').hide();
+			$('#loadingImage').hide();
 			$('#publications').val(data.msg).show();
 		}
 	})
