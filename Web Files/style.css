@@ -1,7 +1,3 @@
-body{
-
-}
-
 .node {
     font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -12,3 +8,15 @@ body{
     fill: none;
 }
 
+#bars{
+    display: inline-block;
+    border: solid;
+    border-color: black;
+}
+
+.bar{
+    display: inline-block;
+    width:20px;
+    height:1px;
+    background-color: teal;
+}

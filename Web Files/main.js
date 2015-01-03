@@ -44,6 +44,8 @@ $(document).ready(function() {
 			var coops = buildCoopJSON(data.publications);
 			$('#loadingImage').hide();
 			console.log(coops);
+
+			createBarGraph(publicationsJSON);
 		}else{
 			$('#loadingImage').hide();
 			$('#publications').val(data.msg).show();
