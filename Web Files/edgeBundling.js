@@ -24,54 +24,31 @@ function createEdgeBundle(coopJson){
         .append("g")
         .attr("transform", "translate(" + radius + "," + radius + ")");
 
-    d3.json("readme-flare-imports.json", function(error, classes) {
-        var nodes = cluster.nodes(packageHierarchy(classes)),
-            links = packageImports(nodes);
 
-        svg.selectAll(".link")
-            .data(bundle(links))
-            .enter().append("path")
-            .attr("class", "link")
-            .attr("d", line);
+    var nodes = cluster.nodes(coopJson),
+        links = packageImports(nodes);
 
-        svg.selectAll(".node")
-            .data(nodes.filter(function(n) { return !n.children; }))
-            .enter().append("g")
-            .attr("class", "node")
-            .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
-            .append("text")
-            .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
-            .attr("dy", ".31em")
-            .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-            .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-            .text(function(d) { return d.key; });
-    });
+    svg.selectAll(".link")
+        .data(bundle(links))
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", line);
+
+    svg.selectAll(".node")
+        .data(nodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+        .append("text")
+        .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+        .attr("dy", ".31em")
+        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+        .text(function(d) { return d.key(); });                                                                         //mal schaun obs klappt
+
 
     d3.select(self.frameElement).style("height", diameter + "px");
 
-// Lazily construct the package hierarchy from class names.
-    function packageHierarchy(classes) {
-        var map = {};
-
-        function find(name, data) {
-            var node = map[name], i;
-            if (!node) {
-                node = map[name] = data || {name: name, children: []};
-                if (name.length) {
-                    node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
-                    node.parent.children.push(node);
-                    node.key = name.substring(i + 1);
-                }
-            }
-            return node;
-        }
-
-        classes.forEach(function(d) {
-            find(d.name, d);
-        });
-
-        return map[""];
-    }
 
 // Return a list of imports for the given array of nodes.
     function packageImports(nodes) {
@@ -93,66 +70,40 @@ function createEdgeBundle(coopJson){
         return imports;
     }
 
+    function generateLinks(coopJson) {
+        var links = [];
+        //console.log(coopJson.authors);
+        // For each import, construct a link from the source to target node.
 
-
-
-    // Result containing counters for number of authors and publications and authors
-    var coopMap = {
-        totalAuthorCount:       0,
-        totalPublicationCount:  0,
-        authors:                {}
-    };
-
-    // Iterate over publication array, inside: Iterate over contributing authors
-    // 1st step: If an author is not yet present in the result, we add him to the result.
-    // Each author has an object for co-Authors, and a counter for total cooperations.
-    // 2nd step: For each co-Author, the respective counter is incremented by 1.
-    pubJSONArray.forEach(function(actPublication){
-
-        // Iterating over contributing authors, adding them to the coopMap:
-        actPublication.authors.forEach(function(actAuthor){
-            // Step 1: Add author if necessary
-            if(!coopMap.authors.hasOwnProperty(actAuthor.name)){
-                coopMap.authors[actAuthor.name]={
-                    coAuthors:{},
-                    totalPublications:0
-                };
-                coopMap.totalAuthorCount++;
+        $.each(coopJson.authors,function(key,value) {
+            if(value.coAuthors){
+                $.each(value.coAuthors,function(key2,pubCount) {
+                    var small;
+                    var big;
+                    if(key < key2){ //lex order
+                        small = key;
+                        big = key2;
+                    }else{
+                        small = key2;
+                        big = key;
+                    }
+                    var added = false;
+                    //check if allready added
+                    $.each( links, function( index, link ){
+                        if(link.source == small && link.target == big){
+                            added = true;
+                        }
+                    });
+                    if(!added){
+                        links.push({source: small, target: big, value: pubCount});   //lex smaller is source
+                    }
+                });
             }
         });
 
-        // All contributing authors are present in the coopMap.
-        // Step 2: For each author, ...
-        actPublication.authors.forEach(function(actAuthor){
+        return links;
+    }
 
-            // ... look at other authors...
-            actPublication.authors.forEach(function(innerAuthor){
 
-                // Do not connect an author with himself
-                if(actAuthor.name != innerAuthor.name){
-
-                    // Register actAuthor for innerAuthor:
-                    if(!coopMap.authors[actAuthor.name].hasOwnProperty([innerAuthor.name])){
-                        // Add outer Author to innerAuthor's coop list
-                        coopMap.authors[actAuthor.name].coAuthors[innerAuthor.name]=1;
-
-                    } else {
-                        // Authors alreay "know" each other: Just increment the counter
-                        coopMap.authors[actAuthor.name].coAuthors[innerAuthor.name]++;
-                    }
-
-                }
-            });
-            // End of inner forEach: One author finished
-            coopMap.authors[actAuthor.name].totalPublications++;
-        });
-        // End of outer forEach: Publication finished
-        coopMap.totalPublicationCount++;
-
-    });
-
-    // All publications read
-
-    return(coopMap);
 
 }
