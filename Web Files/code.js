@@ -12,18 +12,24 @@ coopMap{
     authors: {
         authorA {
             totalPublications: 1
-            author B: 1
-            author C: 1
+            coAuthors{
+                author B: 1
+                author C: 1
+                }
         }
          authorB {
              totalPublications: 1
-             author A: 1
-             author C: 1
+             coAuthors{
+                 author A: 1
+                 author C: 1
+                 }
          }
          authorC {
              totalPublications: 1
-             author A: 1
-             author B: 1
+             coAuthors{
+                 author A: 1
+                 author B: 1
+                 }
          }
         }
 }
@@ -39,7 +45,7 @@ function buildCoopJSON(pubJSONArray){
 
     // Iterate over publication array, inside: Iterate over contributing authors
     // 1st step: If an author is not yet present in the result, we add him to the result.
-    // Each author has an object for each co-Author, containing a counter for total cooperations.
+    // Each author has an object for co-Authors, and a counter for total cooperations.
     // 2nd step: For each co-Author, the respective counter is incremented by 1.
     pubJSONArray.forEach(function(actPublication){
 
@@ -48,6 +54,7 @@ function buildCoopJSON(pubJSONArray){
             // Step 1: Add author if necessary
             if(!coopMap.authors.hasOwnProperty(actAuthor.name)){
                 coopMap.authors[actAuthor.name]={
+                    coAuthors:{},
                     totalPublications:0
                 };
                 coopMap.totalAuthorCount++;
@@ -67,11 +74,11 @@ function buildCoopJSON(pubJSONArray){
                     // Register actAuthor for innerAuthor:
                     if(!coopMap.authors[actAuthor.name].hasOwnProperty([innerAuthor.name])){
                         // Add outer Author to innerAuthor's coop list
-                        coopMap.authors[actAuthor.name][innerAuthor.name]=1;
+                        coopMap.authors[actAuthor.name].coAuthors[innerAuthor.name]=1;
 
                     } else {
                         // Authors alreay "know" each other: Just increment the counter
-                        coopMap.authors[actAuthor.name][innerAuthor.name]++;
+                        coopMap.authors[actAuthor.name].coAuthors[innerAuthor.name]++;
                     }
 
                 }
