@@ -89,3 +89,74 @@ function buildCoopJSON(pubJSONArray){
     return(coopMap);
 
 }
+
+function buildEdgeBundleJson(pubJSONArray){
+    /*
+    var generate = [
+        {"name": "root.Manuel_Jose", "imports": ["root.vivant", "root.designer", "root.artista", "root.empreendedor"]},
+        {"name": "root.vivant", "imports": []},
+        {"name": "root.designer", "imports": []},
+        {"name": "root.artista", "imports": []},
+        {"name": "root.empreendedor", "imports": []}
+    ];
+    */
+    /*
+    var json = [];
+    var obj = {};
+    obj.name = "root.Manuel_Jose";
+    obj.imports = [];
+    obj.imports.push("root.w");
+    obj.imports.push("root.ys");
+    json.push(obj);
+    */
+
+
+    var json = [];
+
+    pubJSONArray.forEach(function(actPublication){
+
+        // Iterating over contributing authors, adding them to the coopMap:
+        actPublication.authors.forEach(function(actAuthor){
+            var object = {};
+            var inputAuthor = "root."+actAuthor.name;
+            var index = json.map(function(e) { return e.name; }).indexOf(inputAuthor);
+
+            if(index < 0){  //case not existend  -->add
+                object.name = inputAuthor;
+                object.totalPublications = 1;
+                object.coAuthors = [];
+                json.push(object);
+                index = json.length-1;
+            }else{   // case existed   --> publications ++
+                json[index].totalPublications++;
+            }
+
+            // ... look at other authors...
+            actPublication.authors.forEach(function(innerAuthor){
+
+                // Do not connect an author with himself
+                if(actAuthor.name != innerAuthor.name){
+
+                    var coAuthor = "root."+innerAuthor.name;
+                    var coIndex = json[index].coAuthors.map(function(e) { return e; }).indexOf(coAuthor);
+
+                    if(coIndex < 0){
+                        json[index].coAuthors.push(coAuthor);
+                    }else{
+                      //basst  könnte man noch mit index rumspielen und ein 2tes array mit nem counter für gemeinsame publicationen machen
+                    }
+
+                }
+            });
+
+        });
+
+    });
+
+
+
+
+
+    return json;
+
+}

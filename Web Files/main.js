@@ -43,9 +43,15 @@ $(document).ready(function() {
 
 			var coops = buildCoopJSON(data.publications);
 			$('#loadingImage').hide();
+			console.log("CoopJSON");
 			console.log(coops);
 
+			console.log("BUNDLE");
+			var edge = buildEdgeBundleJson(data.publications);
+			console.log(edge);
+
 			createBarGraph(publicationsJSON);
+			createEdgeBundle(edge);
 		}else{
 			$('#loadingImage').hide();
 			$('#publications').val(data.msg).show();

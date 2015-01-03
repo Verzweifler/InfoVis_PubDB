@@ -1,7 +1,7 @@
 
 function createEdgeBundle(coopJson){
 
-    var diameter = 960,
+    var diameter = 960*2,
         radius = diameter / 2,
         innerRadius = radius - 120;
 
@@ -25,30 +25,53 @@ function createEdgeBundle(coopJson){
         .attr("transform", "translate(" + radius + "," + radius + ")");
 
 
-    var nodes = cluster.nodes(coopJson),
-        links = packageImports(nodes);
+        var nodes = cluster.nodes(packageHierarchy(coopJson)),
+            links = packageImports(nodes);
 
-    svg.selectAll(".link")
-        .data(bundle(links))
-        .enter().append("path")
-        .attr("class", "link")
-        .attr("d", line);
+        svg.selectAll(".link")
+            .data(bundle(links))
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", line);
 
-    svg.selectAll(".node")
-        .data(nodes)
-        .enter().append("g")
-        .attr("class", "node")
-        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
-        .append("text")
-        .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
-        .attr("dy", ".31em")
-        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-        .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-        .text(function(d) { return d.key(); });                                                                         //mal schaun obs klappt
+        svg.selectAll(".node")
+            .data(nodes.filter(function(n) { return !n.children; }))
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+            .append("text")
+            .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+            .attr("dy", ".31em")
+            .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+            .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+            .text(function(d) { return d.key; });
 
 
     d3.select(self.frameElement).style("height", diameter + "px");
 
+// Lazily construct the package hierarchy from class names.
+    function packageHierarchy(classes) {
+        var map = {};
+
+        function find(name, data) {
+            var node = map[name], i;
+            if (!node) {
+                node = map[name] = data || {name: name, children: []};
+                if (name.length) {
+                    node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+                    node.parent.children.push(node);
+                    node.key = name.substring(i + 1);
+                }
+            }
+            return node;
+        }
+
+        classes.forEach(function(d) {
+            find(d.name, d);
+        });
+
+        return map[""];
+    }
 
 // Return a list of imports for the given array of nodes.
     function packageImports(nodes) {
@@ -62,48 +85,11 @@ function createEdgeBundle(coopJson){
 
         // For each import, construct a link from the source to target node.
         nodes.forEach(function(d) {
-            if (d.imports) d.imports.forEach(function(i) {
+            if (d.coAuthors) d.coAuthors.forEach(function(i) {
                 imports.push({source: map[d.name], target: map[i]});
             });
         });
 
         return imports;
     }
-
-    function generateLinks(coopJson) {
-        var links = [];
-        //console.log(coopJson.authors);
-        // For each import, construct a link from the source to target node.
-
-        $.each(coopJson.authors,function(key,value) {
-            if(value.coAuthors){
-                $.each(value.coAuthors,function(key2,pubCount) {
-                    var small;
-                    var big;
-                    if(key < key2){ //lex order
-                        small = key;
-                        big = key2;
-                    }else{
-                        small = key2;
-                        big = key;
-                    }
-                    var added = false;
-                    //check if allready added
-                    $.each( links, function( index, link ){
-                        if(link.source == small && link.target == big){
-                            added = true;
-                        }
-                    });
-                    if(!added){
-                        links.push({source: small, target: big, value: pubCount});   //lex smaller is source
-                    }
-                });
-            }
-        });
-
-        return links;
-    }
-
-
-
 }
