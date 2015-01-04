@@ -59,3 +59,10 @@
     font-family: sans-serif;
     font-size:11px;
 }
+
+#circle {
+    display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
+}

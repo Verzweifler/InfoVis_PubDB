@@ -13,20 +13,23 @@ function createBarGraph(pubJSON){
     pubJSON.forEach(function(d){
         var index = yearNow-parseInt(d.year);
 
+        // Inserting a dummy for the newly found index:
         if(dataset.length < index+1)
-            dataset.push([d.year, 0]);
+            dataset.push([d.year, 0, []]);
 
+        // Writing the actual data:
         dataset[index][1]++;
+        dataset[index][2].push(d);    // Just append the whole publication...
     });
 
-    //console.log(dataset);
+    console.log(dataset);
     // Put 2015 at last place
     dataset.reverse();
 
     // Some necessary parameters:
-    var w = 500;
+    var w = 600;
     var h = 300;
-    var paddingBars=3;
+    var paddingBars=2;
     var paddingSides = 25;
 
     // Preparing the scales, so the bars fit in width and height:
@@ -48,7 +51,8 @@ function createBarGraph(pubJSON){
         .range([h-paddingSides, paddingSides]);     // ... to the height of the plotting area
 
     // Axis:
-    var xAxis = d3.svg.axis()   // Create an axis...
+    var xAxis = d3.svg.axis()   // Create an axis
+        .tickFormat(d3.format("Y"))// Scale it as years ...
         .scale(scaleX)          // using the x-Scale
         .orient("bottom");      // Values on the bottom of the axis
 
@@ -70,12 +74,13 @@ function createBarGraph(pubJSON){
         .append("rect")
         .attr("class", "bar")
         .attr("x", function(d, i){
-            return scaleX(d[0]);
+            return scaleX(d[0])+paddingBars;
         })
         .attr("y", function(d){
+            console.log(d);
             return scaleY(d[1]);
         })
-        .attr("width", w/dataset.length-paddingBars)
+        .attr("width", w/dataset.length-paddingBars*2)
         .attr("height", function(d){
             return h-scaleY(d[1])-paddingSides;
         })
@@ -93,7 +98,7 @@ function createBarGraph(pubJSON){
         })
         .attr("text-anchor", "middle")
         .attr("x", function(d, i) {
-            return scaleX(d[0]) + (w / dataset.length - paddingBars) / 2;
+            return scaleX(d[0]) + (w / dataset.length) / 2;
         })
         .attr("y", function(d) {
             if(h-scaleY(d[1])>paddingSides+15){
@@ -114,7 +119,7 @@ function createBarGraph(pubJSON){
     svg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(" +
-            (w / dataset.length - paddingBars) / 2 + ", " + (h-paddingSides)+ ")")
+            (w / dataset.length) / 2 + ", " + (h-paddingSides)+ ")")
         .call(xAxis);
 
     //Appending y-Axis:

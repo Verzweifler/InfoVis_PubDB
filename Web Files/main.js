@@ -38,17 +38,17 @@ $(document).ready(function() {
 			"url":"http://www.medien.ifi.lmu.de/team/daniel.buschek/"}
 			*/
 			authorsJSON = data.authors;
-			$('#publications').val(JSON.stringify(data.publications)).show();
-			$('#authors').val(JSON.stringify(data.authors)).show();
+			//$('#publications').val(JSON.stringify(data.publications)).show();
+			//$('#authors').val(JSON.stringify(data.authors)).show();
 
 			var coops = buildCoopJSON(data.publications);
 			$('#loadingImage').hide();
-			console.log("CoopJSON");
+			console.log("CoopJSON:");
 			console.log(coops);
 
-			console.log("BUNDLE");
+			//console.log("BUNDLE");
 			var edge = buildEdgeBundleJson(data.publications);
-			console.log(edge);
+			//console.log(edge);
 
 			var counter = 0;
 			var limit = 3;
@@ -67,8 +67,8 @@ $(document).ready(function() {
 			object.coAuthorsPublications = [1];
 			edgeReduced.push(object);
 
-			console.log("Anzahl der Authoren mit weniger als "+limit+" Publikationen: "+counter);
-			console.log(edgeReduced);
+			//console.log("Anzahl der Authoren mit weniger als "+limit+" Publikationen: "+counter);
+			//console.log(edgeReduced);
 
 			createBarGraph(publicationsJSON);
 			createEdgeBundle(edgeReduced);
