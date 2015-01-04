@@ -10,6 +10,9 @@
 
 #bars{
     display: inline-block;
+    border-color: black;
+    border-style: solid;
+    border-width: thin;
 }
 
 .bar{
