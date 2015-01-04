@@ -1,7 +1,7 @@
 
 function createEdgeBundle(coopJson){
 
-    var diameter = 960*2,
+    var diameter = 960,
         radius = diameter / 2,
         innerRadius = radius - 120;
 
@@ -18,7 +18,7 @@ function createEdgeBundle(coopJson){
         .radius(function(d) { return d.y; })
         .angle(function(d) { return d.x / 180 * Math.PI; });
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#circle").append("svg")
         .attr("width", diameter)
         .attr("height", diameter)
         .append("g")
@@ -85,8 +85,14 @@ function createEdgeBundle(coopJson){
 
         // For each import, construct a link from the source to target node.
         nodes.forEach(function(d) {
+            console.log("Name:"+d.name);
+            console.log(d.coAuthors);
             if (d.coAuthors) d.coAuthors.forEach(function(i) {
-                imports.push({source: map[d.name], target: map[i]});
+                if(map[i]){
+                    imports.push({source: map[d.name], target: map[i] ,value: d.coAuthorsPublications[i]});
+                }else{
+                    imports.push({source: map[d.name], target: map["root.Others"] ,value: 1});
+                }
             });
         });
 

@@ -50,8 +50,28 @@ $(document).ready(function() {
 			var edge = buildEdgeBundleJson(data.publications);
 			console.log(edge);
 
+			var counter = 0;
+			var limit = 3;
+			var edgeReduced = [];
+			edge.forEach(function(d) {
+				if (d.totalPublications < limit){
+					counter++;
+				}else{
+					edgeReduced.push(d);
+				}
+			});
+			var object = {};
+			object.name = "root.Others";
+			object.totalPublications = 1;
+			object.coAuthors = [];
+			object.coAuthorsPublications = [1];
+			edgeReduced.push(object);
+
+			console.log("Anzahl der Authoren mit weniger als "+limit+" Publikationen: "+counter);
+			console.log(edgeReduced);
+
 			createBarGraph(publicationsJSON);
-			createEdgeBundle(edge);
+			createEdgeBundle(edgeReduced);
 		}else{
 			$('#loadingImage').hide();
 			$('#publications').val(data.msg).show();

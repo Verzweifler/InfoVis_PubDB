@@ -125,6 +125,7 @@ function buildEdgeBundleJson(pubJSONArray){
                 object.name = inputAuthor;
                 object.totalPublications = 1;
                 object.coAuthors = [];
+                object.coAuthorsPublications = [];
                 json.push(object);
                 index = json.length-1;
             }else{   // case existed   --> publications ++
@@ -142,8 +143,10 @@ function buildEdgeBundleJson(pubJSONArray){
 
                     if(coIndex < 0){
                         json[index].coAuthors.push(coAuthor);
+                        json[index].coAuthorsPublications.push(1);
                     }else{
                       //basst  könnte man noch mit index rumspielen und ein 2tes array mit nem counter für gemeinsame publicationen machen
+                      json[index].coAuthorsPublications[coIndex]++;
                     }
 
                 }
