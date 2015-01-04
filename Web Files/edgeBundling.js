@@ -55,7 +55,7 @@ function createEdgeBundle(coopJson){
 
     function clickFunction(d) {
 
-        //CASE IF CLICKED AGAIN
+        //Check if same Node is clicked again
         var clickedAgain = false;
         if(currentlySelectedNode != null){ //if one node allready selected
             if(currentlySelectedNode.name == d.name){ //check if same node is klicked
