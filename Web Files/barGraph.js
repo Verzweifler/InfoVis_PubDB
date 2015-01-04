@@ -5,8 +5,7 @@
 // Receives a publications JSON, containing information about publications; mainly author and year
 function createBarGraph(pubJSON){
 
-    var dataset;
-    dataset = new Array();
+    var dataset = new Array();
     var minYear=3000;
     var maxYear = 0;
 
@@ -32,7 +31,7 @@ function createBarGraph(pubJSON){
     // Some necessary parameters:
     var w = 500;
     var h = 200;
-    var barPadding=1;
+    var paddingBars=1;
 
     // creating a svg object for displaying the bars:
     var svg = d3.select("#bars")
@@ -41,9 +40,10 @@ function createBarGraph(pubJSON){
         .attr("height", h);
 
     // Preparing the scales, so the bars fit in width and height:
-    var scaleYears = d3.scale.linear()
-        .domain([0, dataset.length])    // match the scale from the array (0 to length)...
-        .range([minYear, maxYear]);     // ... to the actual years
+    // X-Axis: Years
+    var scaleX = d3.scale.linear()
+        .domain([minYear, maxYear])
+        .range([0, w]);
 
     // Scaling the height of the bars
     var scaleY = d3.scale.linear()
@@ -52,6 +52,7 @@ function createBarGraph(pubJSON){
         })])
         .range([0, h]);
 
+
     // Drawing the rectangles:
     svg.selectAll("rect")
         .data(dataset)
@@ -59,12 +60,12 @@ function createBarGraph(pubJSON){
         .append("rect")
         .attr("class", "bar")
         .attr("x", function(d, i){
-            return i* (w/dataset.length);
+            return i * (w/dataset.length);
         })
         .attr("y", function(d){
             return h-scaleY(d);
         })
-        .attr("width", w/dataset.length-barPadding)
+        .attr("width", w/dataset.length-paddingBars)
         .attr("height", function(d){
             return scaleY(d);
         })
@@ -82,13 +83,13 @@ function createBarGraph(pubJSON){
         })
         .attr("text-anchor", "middle")
         .attr("x", function(d, i) {
-            return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+            return i * (w / dataset.length) + (w / dataset.length - paddingBars) / 2;
         })
         .attr("y", function(d) {
             if(scaleY(d)>15){
-                return h - scaleY(d) + 14;
+                return h - scaleY(d)+14;
             } else
-                return h - scaleY(d) - 5;
+                return h - scaleY(d)-5;
         })
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
@@ -99,4 +100,20 @@ function createBarGraph(pubJSON){
                 return "black";
         });
 
+    // Adding x-Axis:
+    //svg.append("g")
+    //    .attr("class", "axis")
+    //    .call(d3.svg.axis()
+    //        .scale(scaleX)
+    //        .orient("bottom"))
+    //    .attr("transform", "translate(0," + (h - paddingSides) + ")");
+    //
+    //// Adding y-Axis:
+    //svg.append("g")
+    //    .attr("class", "axis")
+    //    .call(d3.svg.axis()
+    //        .scale(scaleY)
+    //        .orient("left")
+    //        .ticks(10))
+    //    .attr("transform", "translate(" + paddingSides + ",0)");
 }

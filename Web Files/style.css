@@ -10,8 +10,6 @@
 
 #bars{
     display: inline-block;
-    border: solid;
-    border-color: black;
 }
 
 .bar{
@@ -19,4 +17,16 @@
     width:20px;
     height:1px;
     background-color: teal;
+}
+
+.axis path,
+.axis line {
+    fill:none;
+    stroke:black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size:11px;
 }
