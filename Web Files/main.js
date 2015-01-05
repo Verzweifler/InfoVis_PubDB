@@ -314,6 +314,9 @@ $(document).ready(function() {
 		//Add Text and update Input
 		pub.enter().append("text");
 		pub.text(function(d) { return d.name; });
+
+		pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("(download)");
+
 		//.append("a").attr("href", function(d){return (d.url.length != 0 ?  d.url[0] : "");}).html("(download)")
 		// Remove old elements as needed.
 		pub.exit().remove();
