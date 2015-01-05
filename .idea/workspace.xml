@@ -2,9 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc0b5e8-224a-4b40-bac3-b4eaf8251009" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/img/calendar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/img/classicTheme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/img/iThingTheme.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/icons-classic/label.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/icons-classic/resultset_next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/icons-classic/resultset_previous.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_flat_10_000000_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-icons_222222_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-icons_222222_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-icons_228ef1_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-icons_2e83ff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-icons_454545_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-icons_888888_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-icons_ef8c08_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-icons_ffd27a_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/images/ui-icons_ffffff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/GPL-License.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/History.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/MIT-License.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/Readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/classic-min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/classic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/dateSliderDemo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/editSliderDemo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/iThing-min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/iThing.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQAllRangeSliders-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQAllRangeSliders-withRuler-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQDateRangeSlider-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQDateRangeSlider-withRuler-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQEditRangeSlider-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQEditRangeSlider-withRuler-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQRangeSlider-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQRangeSlider-withRuler-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/css/smoothness/jquery-ui-1.8.10.custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/lib/jquery-ui/js/jquery-ui-1.8.16.custom.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.structure.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.structure.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/jquery-ui.theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jquery-ui-1.11.2/external/jquery/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/lib/jquery.mousewheel.license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/lib/jquery.mousewheel.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/sliderDemo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/demo/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/barGraph.js" afterPath="$PROJECT_DIR$/Web Files/barGraph.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/index.html" afterPath="$PROJECT_DIR$/Web Files/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/main.js" afterPath="$PROJECT_DIR$/Web Files/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/style.css" afterPath="$PROJECT_DIR$/Web Files/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,8 +103,8 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.65489566" vertical-offset="459" max-vertical-offset="2278">
-                  <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+                <state vertical-scroll-proportion="0.5729984" vertical-offset="1726" max-vertical-offset="2431">
+                  <caret line="125" column="68" selection-start-line="125" selection-start-column="68" selection-end-line="125" selection-end-column="68" />
                   <folding>
                     <element signature="n#!!doc;n#createBarGraph#0" expanded="false" />
                   </folding>
@@ -47,8 +115,8 @@
           <file leaf-file-name="code.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Web Files/code.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1241" max-vertical-offset="2465">
-                  <caret line="140" column="49" selection-start-line="140" selection-start-column="49" selection-end-line="140" selection-end-column="49" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="2465">
+                  <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
                   <folding>
                     <element signature="e#269#752#0" expanded="false" />
                   </folding>
@@ -59,8 +127,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Web Files/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="714">
-                  <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+                <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="850">
+                  <caret line="9" column="75" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -72,20 +140,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="516" max-vertical-offset="1241">
-                  <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.09262166" vertical-offset="553" max-vertical-offset="1241">
+                  <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Web Files/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.42459017" vertical-offset="625" max-vertical-offset="1496">
+                <state vertical-scroll-proportion="0.0" vertical-offset="545" max-vertical-offset="1496">
                   <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
                   <folding />
                 </state>
@@ -117,9 +185,9 @@
         <option value="$PROJECT_DIR$/Web Files/lib/main.js" />
         <option value="$PROJECT_DIR$/Web Files/code.js" />
         <option value="$PROJECT_DIR$/Web Files/edgeBundling.js" />
-        <option value="$PROJECT_DIR$/Web Files/index.html" />
         <option value="$PROJECT_DIR$/Web Files/main.js" />
         <option value="$PROJECT_DIR$/Web Files/style.css" />
+        <option value="$PROJECT_DIR$/Web Files/index.html" />
         <option value="$PROJECT_DIR$/Web Files/barGraph.js" />
       </list>
     </option>
@@ -186,7 +254,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,12 +296,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Web Files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfoVis_PubDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfoVis_PubDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web Files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jQRangeSlider-5.7.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfoVis_PubDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfoVis_PubDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Converter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,6 +361,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Eigene Dokumente\Uni\InfoVis_PubDB\Web Files\lib" />
       <recent name="D:\Eigene Dokumente\Uni\InfoVis_PubDB\Web Files\assets" />
       <recent name="D:\NodeJS\InfoVis_PubDB" />
     </key>
@@ -264,128 +373,11 @@
       <recent name="D:\Eigene Dokumente\Uni\InfoVis_PubDB\Converter" />
     </key>
   </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/edgeBundling.js</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/style.css</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
-  </component>
   <component name="RunManager" selected="Node.js.converter.js">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -393,6 +385,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -531,7 +527,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420379818763</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Graph has years as x-axis instead of 2,014">
+      <created>1420400045267</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1420400045267</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -565,18 +567,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14270669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3147575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31437436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33764833" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885212" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32817337" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327818" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -595,9 +597,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14270669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31540847" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31540847" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -631,7 +633,8 @@
     <MESSAGE value="preparing barGraph stuff" />
     <MESSAGE value="Bar Graph now shows the total sum of publications per year, and scales the bars fitting to the height of the surrounding svg. bars also have an &quot;onclick&quot;-attribute, but that is only a dummy right now.&#10;" />
     <MESSAGE value="Graph now has axes!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph now has axes!" />
+    <MESSAGE value="Graph has years as x-axis instead of 2,014" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph has years as x-axis instead of 2,014" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,32 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Web Files/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="714">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="680">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="533" max-vertical-offset="1156">
@@ -1013,53 +990,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="874" max-vertical-offset="1802">
           <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="88" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="545" max-vertical-offset="1496">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/code.js">
+    <entry file="file://$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/css/iThing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1241" max-vertical-offset="2465">
-          <caret line="140" column="49" selection-start-line="140" selection-start-column="49" selection-end-line="140" selection-end-column="49" />
-          <folding>
-            <element signature="e#269#752#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4352">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="516" max-vertical-offset="1241">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.09262166" vertical-offset="553" max-vertical-offset="1241">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQDateRangeSlider-withRuler-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/lib/jQRangeSlider-5.7.0/jQDateRangeSlider-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="624">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="714">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="850">
+          <caret line="9" column="75" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
+    <entry file="file://$PROJECT_DIR$/Web Files/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65489566" vertical-offset="459" max-vertical-offset="2278">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="2465">
+          <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
           <folding>
-            <element signature="n#!!doc;n#createBarGraph#0" expanded="false" />
+            <element signature="e#269#752#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/main.js">
+    <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42459017" vertical-offset="625" max-vertical-offset="1496">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.5729984" vertical-offset="1726" max-vertical-offset="2431">
+          <caret line="125" column="68" selection-start-line="125" selection-start-column="68" selection-end-line="125" selection-end-column="68" />
+          <folding>
+            <element signature="n#!!doc;n#createBarGraph#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

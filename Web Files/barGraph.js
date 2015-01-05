@@ -7,6 +7,8 @@ function createBarGraph(pubJSON){
 
     var dataset = new Array();
     var yearNow = new Date().getFullYear();
+    var minYear = 1994;
+    var maxYear = 2015;
 
     // Remodeling the dataset for our purposes:
     // Each array slot holds a pair: [year, pubCount]
@@ -35,11 +37,7 @@ function createBarGraph(pubJSON){
     // Preparing the scales, so the bars fit in width and height:
     // X-Axis: Years
     var scaleX = d3.scale.linear()
-        .domain([d3.min(dataset, function(d){   // We're mapping the years...
-            return d[0];                        // (d[0] = years, we map from min to max)
-        }), d3.max(dataset, function(d){
-            return d[0];
-        })])
+        .domain([minYear,maxYear])
         .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
                                                     // thus enabling us to draw an x-Axis
 
@@ -61,7 +59,7 @@ function createBarGraph(pubJSON){
         .orient("left");
 
     // creating a svg object for displaying the bars:
-    var svg = d3.select("#bars")
+    var svg = d3.select("#barChart")
         .append("svg")
         .attr("width", w)
         .attr("height", h);
@@ -127,4 +125,15 @@ function createBarGraph(pubJSON){
         .attr("class", "axis")
         .attr("transform", "translate(" + paddingSides + ", "+ "0)")
         .call(yAxis);
+
+    $("#barSlider").rangeSlider({
+        bounds: {min:minYear, max:maxYear},
+        defaultValues: {min:minYear+3, max:maxYear-1},
+        scales: [
+            {first:function(val){return val;},
+            next: function(val){return val+2;}}
+        ],
+        step:1
+    });
+
 }

@@ -34,7 +34,7 @@
     stroke: #2ca02c;
 }
 
-#bars{
+#barChartArea{
     display: inline-block;
     border-color: black;
     border-style: solid;
