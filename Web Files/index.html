@@ -7,7 +7,6 @@
 		<script src="lib/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="code.js"></script>
-		<script type="text/javascript" src="edgeBundling.js"></script>
 		<script type="text/javascript" src="barGraph.js"></script>
 		<script type="text/javascript" src="lib/d3.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -15,6 +14,14 @@
 	</head>
 	<body>
 		<img src="assets/loading.gif" style="position: relative; display: block; top: 40%; margin: 0 auto;" alt="loading" id="loadingImage">
+
+
+		<h2>Detail View:</h2>
+		<div id="detail">
+			<div id="detail--auth"><h3>Author:</h3></div>
+			<div id="detail--coauth"><h3>CoAuthors:</h3></div>
+			<div id="detail--pub"><h3>Publications:</h3></div>
+		</div>
 
 		<h2>BarArea ahead:</h2>
 		<div id="bars"></div>
