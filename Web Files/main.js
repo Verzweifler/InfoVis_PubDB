@@ -1,10 +1,24 @@
+
+var minYear = 1994;
+var maxYear = 2015;
+// Reflects set filters
+var allFilters = {
+	years: {from: minYear,
+			to: maxYear},
+	title: "",
+	description: "",
+	keywords: [],
+	authors: [],
+	award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
+		filterForAward:false,	// True, if we want to filter for awards
+		filterValue:false		// Value of the filter, if set
+	}
+};
+
+var publicationsJSON = [],
+	authorsJSON = [];
+
 $(document).ready(function() {
-
-	// Base-URL on which the URLs in the Publication-Objects build
-	var baseURL = "http://www.medien.ifi.lmu.de/";
-
-	var publicationsJSON = [],
-		authorsJSON = [];
 
 	// Request "mortifier" asks for the data
 	$.get("http://localhost:3000/mortifier", function(data) {
@@ -30,6 +44,7 @@ $(document).ready(function() {
 			"keywords":["keystroke dynamics","mobile","touch","biometrics"]}
 			*/
 			publicationsJSON = data.publications;
+			createBarGraph(publicationsJSON);
 
 			// Authors format:
 			/*
@@ -41,14 +56,9 @@ $(document).ready(function() {
 			//$('#publications').val(JSON.stringify(data.publications)).show();
 			//$('#authors').val(JSON.stringify(data.authors)).show();
 
-			var coops = buildCoopJSON(data.publications);
-			$('#loadingImage').hide();
-			console.log("CoopJSON:");
-			console.log(coops);
+			var filteredJSON = filterPubJSON(publicationsJSON);
 
-			//console.log("BUNDLE");
-			var edge = buildEdgeBundleJson(data.publications);
-			//console.log(edge);
+			var edge = buildEdgeBundleJson(publicationsJSON);
 
 			var counter = 0;
 			var limit = 3;
@@ -67,16 +77,12 @@ $(document).ready(function() {
 			object.coAuthorsPublications = [1];
 			edgeReduced.push(object);
 
-			//console.log("Anzahl der Authoren mit weniger als "+limit+" Publikationen: "+counter);
-			//console.log(edgeReduced);
-
-			createBarGraph(publicationsJSON);
 			createEdgeBundle(edgeReduced);
+
+			$('#loadingImage').hide();
 		}else{
 			$('#loadingImage').hide();
 			$('#publications').val(data.msg).show();
 		}
 	})
-
-
 });
