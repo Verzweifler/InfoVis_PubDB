@@ -34,7 +34,7 @@
     stroke: #2ca02c;
 }
 
-#bars{
+#barChartArea{
     display: inline-block;
     border-color: black;
     border-style: solid;
@@ -45,7 +45,6 @@
     display: inline-block;
     width:20px;
     height:1px;
-    background-color: teal;
 }
 
 .axis path,

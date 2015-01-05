@@ -14,15 +14,18 @@ function createBarGraph(pubJSON){
         var index = yearNow-parseInt(d.year);
 
         // Inserting a dummy for the newly found index:
-        if(dataset.length < index+1)
-            dataset.push([d.year, 0, []]);
+        while(dataset.length < index+1)
+            if(d.year < allFilters.years.from || d.year > allFilters.years.to)
+                dataset.push([d.year, 0, "rgb(0,0,255);", []]);
+            else
+                dataset.push([d.year, 0, "rgb(255,0,0);", []]);
 
         // Writing the actual data:
         dataset[index][1]++;
-        dataset[index][2].push(d);    // Just append the whole publication...
+        dataset[index][3].push(d);    // Just append the whole publication...
     });
 
-    console.log(dataset);
+    //console.log(dataset);
     // Put 2015 at last place
     dataset.reverse();
 
@@ -35,11 +38,7 @@ function createBarGraph(pubJSON){
     // Preparing the scales, so the bars fit in width and height:
     // X-Axis: Years
     var scaleX = d3.scale.linear()
-        .domain([d3.min(dataset, function(d){   // We're mapping the years...
-            return d[0];                        // (d[0] = years, we map from min to max)
-        }), d3.max(dataset, function(d){
-            return d[0];
-        })])
+        .domain([minYear,maxYear])
         .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
                                                     // thus enabling us to draw an x-Axis
 
@@ -61,11 +60,10 @@ function createBarGraph(pubJSON){
         .orient("left");
 
     // creating a svg object for displaying the bars:
-    var svg = d3.select("#bars")
+    var svg = d3.select("#barChart")
         .append("svg")
         .attr("width", w)
         .attr("height", h);
-
 
     // Drawing the rectangles:
     svg.selectAll("rect")
@@ -83,6 +81,9 @@ function createBarGraph(pubJSON){
         .attr("width", w/dataset.length-paddingBars*2)
         .attr("height", function(d){
             return h-scaleY(d[1])-paddingSides;
+        })
+        .attr("style", function(d){
+            return "fill: " + d[2];
         })
         .attr("onclick", function(d){
             return "alert(\"" + d[0] + ": " + d[1] + " Arbeiten\");";
@@ -127,4 +128,55 @@ function createBarGraph(pubJSON){
         .attr("class", "axis")
         .attr("transform", "translate(" + paddingSides + ", "+ "0)")
         .call(yAxis);
+
+
+
+    // Adding a slider for selecting specific years:
+    $("#barSlider").rangeSlider({
+        bounds: {min:minYear, max:maxYear},
+        defaultValues: {min:minYear, max:maxYear},
+        scales: [
+            {first:function(val){return val;},
+            next: function(val){return val+2;}}
+        ],
+        step:1
+    });
+
+    $("#barSlider").on("valuesChanging", function(e, data){
+        allFilters.years.from=data.values.min;
+        allFilters.years.to=data.values.max;
+
+        // Calculate new dataset based on filters:
+        var dataset = [];
+        publicationsJSON.forEach(function(d){
+            var index = yearNow-parseInt(d.year);
+
+            // Inserting a dummy for the newly found index:
+            while(dataset.length < index+1)
+                if(d.year < allFilters.years.from || d.year > allFilters.years.to)
+                    dataset.push([d.year, 0, "rgb(0,0,255);", []]);
+                else
+                    dataset.push([d.year, 0, "rgb(255,0,0);", []]);
+
+            // Writing the actual data:
+            dataset[index][1]++;
+            dataset[index][3].push(d);    // Just append the whole publication...
+        });
+        dataset.reverse();
+
+        // Allocating new data to all rects:
+        var svg = d3.select("#barChart").selectAll("rect")
+            .data(dataset)
+            .attr("style", function(d){ // Filling them respectively
+                return "fill: " +  d[2] + ";";
+            });
+
+    });
+
 }
+
+
+
+
+
+
