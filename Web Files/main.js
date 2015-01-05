@@ -263,6 +263,24 @@ $(document).ready(function() {
 		if(node != null){ //falls nicht deselektiert wurde
 			newAuthorData.push(node.name);
 			newCoAuthorsData = node.coAuthors;
+
+			//generate structure for publications
+			publicationsJSON.forEach(function(actPublication){
+				actPublication.authors.forEach(function(actAuthor){
+					var aName = "root."+actAuthor.name;
+					if(node.name == aName){
+						var publicationData = {};
+						publicationData.name = actPublication.title.name;
+						publicationData.url = [];
+						if(actPublication.downloads.length != 0){
+							publicationData.url.push(actPublication.downloads[0]);
+						}
+						//newPubData.push(actPublication.title.name);
+						newPubData.push(publicationData);
+					}
+				});
+
+			});
 		}else{//deselektierung
 
 		}
@@ -290,24 +308,6 @@ $(document).ready(function() {
 		//UPDATE COAUTHORS END
 
 		//UPDATE COAUTHORS START
-		//generate structure for publications
-		publicationsJSON.forEach(function(actPublication){
-			actPublication.authors.forEach(function(actAuthor){
-				var aName = "root."+actAuthor.name;
-				if(node.name == aName){
-					var ooo = {};
-					ooo.name = actPublication.title.name;
-					ooo.url = [];
-					if(actPublication.downloads.length != 0){
-						ooo.url.push(actPublication.downloads[0]);
-					}
-					//newPubData.push(actPublication.title.name);
-					newPubData.push(ooo);
-				}
-			});
-
-		});
-
 		var pub = d3.select("#detail--pub").selectAll("text")
 			.data(newPubData);
 
