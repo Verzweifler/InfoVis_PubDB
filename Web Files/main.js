@@ -1,4 +1,3 @@
-$(document).ready(function() {
 
 var minYear = 1994;
 var maxYear = 2015;
@@ -19,8 +18,7 @@ var allFilters = {
 var publicationsJSON = [],
 	authorsJSON = [];
 
-
-	var currentlySelectedNode = null;
+var currentlySelectedNode = null;
 
 $(document).ready(function() {
 
@@ -316,7 +314,6 @@ $(document).ready(function() {
 		//Add Text and update Input
 		pub.enter().append("text");
 		pub.text(function(d) { return d.name; });
-		pub.filter(function(d) { return d.url != 0; }).enter().append("a").html("heyhoe");
 		//.append("a").attr("href", function(d){return (d.url.length != 0 ?  d.url[0] : "");}).html("(download)")
 		// Remove old elements as needed.
 		pub.exit().remove();
