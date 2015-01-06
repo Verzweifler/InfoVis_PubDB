@@ -30,12 +30,10 @@ function filterPubJSON(){
     // Iterate over every publication
     publicationsJSON.forEach(function(actPub,index){
         var pushThis = true;
-
-    // Filter for Years:
-    //    if ((actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
-    //        pushThis=false;
-    //    }
-
+        // Filter for Years:
+        // if ((actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
+            // pushThis=false;
+        // }
         // Filter for Awards:
         if (allFilters.award.filterForAward) {
             // Filtering for awards:
@@ -43,12 +41,14 @@ function filterPubJSON(){
                 pushThis=false;
             }
         }
-
-        if(pushThis)
+        if(pushThis) {
             result.push(actPub);
+        }
     });
 
-    drawBarGraph(result);
+    //drawBarGraph(result);
+    var newCircle = buildEdgeBundleJson(result);
+    createEdgeBundle(newCircle);
     return result;
 }
 
@@ -117,7 +117,7 @@ function buildEdgeBundleJson(pubJSONArray){
     var others = {};
 
 
-    while(lengthCounter > 300){
+    while(lengthCounter > maxAuthors){
         counter = 0;
         lengthCounter = 0;
         limit++;

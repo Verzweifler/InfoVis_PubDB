@@ -20,33 +20,35 @@
 	<body>
 		<img src="assets/loading.gif" style="position: relative; display: block; top: 40%; margin: 0 auto;" alt="loading" id="loadingImage">
 
+		<div id="sidebar">
+			<div id="filter">
+				<h2>Filter:</h2>
 
-		<div id="detail">
-			<h2>Detail View:</h2>
-			<div id="detail--auth"><h3>Author:</h3></div>
-			<div id="detail--coauth"><h3>CoAuthors:</h3></div>
-			<div id="detail--pub"><h3>Publications:</h3></div>
+			</div>
+			<div id="detail">
+				<h2>Detail View:</h2>
+				<div id="detail--auth"><h3>Author:</h3><div>Currently no author selected</div></div>
+				<div id="detail--coauth"><h3>CoAuthors:</h3><p id="detail--coauth-list"></p></div>
+				<div id="detail--pub"><h3>Publications:</h3><p id="detail--pub-list"></p></div>
+			</div>
 		</div>
 
-		<h2>BarArea ahead:</h2>
+
+
+		<div id="visualisation">
+			<h2>BarArea ahead:</h2>
 			<div id="barChartArea">
-			<div id="barChart"></div>
-			<div id="barSlider"></div>
+				<div id="barChart"></div>
+				<div id="barSlider"></div>
+			</div>
+
+
+			<h2>Author Circle:</h2>
+			<div id="circle"></div>
+
+
 		</div>
 
-		<!--<h2>Publications</h2>-->
-		<!--<textarea style="display: none;" id="publications" rows="14" cols="150" title="publications">-->
-			<!--&lt;!&ndash; Publications JSON &ndash;&gt;-->
-		<!--</textarea>-->
-
-		<!--<h2>Authors</h2>-->
-		<!--<textarea style="display: none;" id="authors" rows="14" cols="150" title="authors">-->
-			<!--&lt;!&ndash; Authors JSON &ndash;&gt;-->
-		<!--</textarea>-->
-
-
-		<h2>CirclePowa:</h2>
-		<div id="circle"></div>
 
 	</body>
 </html>
