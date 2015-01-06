@@ -199,8 +199,6 @@ function drawBarGraph(JSONtoDisplay){
     rects.attr("height", function(d){
             if(d != null)
                 return h-scaleY(d[1])-paddingSides;
-            else
-                return 0;
         })
         .attr("y", function(d){
             if(d != null)

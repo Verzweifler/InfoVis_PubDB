@@ -32,9 +32,9 @@ function filterPubJSON(){
         var pushThis = true;
 
     // Filter for Years:
-    //    if (!(actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
-    //        pushThis=false;
-    //    }
+        if ((actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
+            pushThis=false;
+        }
 
         // Filter for Awards:
         if (allFilters.award.filterForAward) {
