@@ -8,7 +8,7 @@
  * @param toFilter the publicationJSON object that needs filtering.
  * @return a filtered publicationJSOn object.
  */
-function filterPubJSON(toFilter){
+function filterPubJSON(){
     /*
     // Reflects set filters
     var allFilters = {
@@ -25,16 +25,31 @@ function filterPubJSON(toFilter){
         minNumberOfPublications: 3
     };
     */
-    var result = toFilter;
+    var result = [];
 
     // Iterate over every publication
-    result.forEach(function(actPub,index){
+    publicationsJSON.forEach(function(actPub,index){
+        var pushThis = true;
+
     // Filter for Years:
-        if (actPub.year < allFilters.years.from || actPub.year > allFilters.years.to) {
-            delete result[index];
+    //    if (!(actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
+    //        pushThis=false;
+    //    }
+
+        // Filter for Awards:
+        if (allFilters.award.filterForAward) {
+            // Filtering for awards:
+            if (!((allFilters.award.filterValue && actPub.award) || (!allFilters.award.filterValue && !actPub.award))) {
+                pushThis=false;
+            }
         }
+
+        if(pushThis)
+            result.push(actPub);
     });
 
+    console.log(result);
+    drawBarGraph(result);
     return result;
 }
 

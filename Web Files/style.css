@@ -65,3 +65,7 @@
     border-style: solid;
     border-width: thin;
 }
+
+#detail{
+    float:right;
+}
