@@ -184,17 +184,20 @@ function drawBarGraph(JSONtoDisplay){
 
 
     // Allocating new data to all rects:
+
+    // Joining new data to existing data
     var svg = d3.select("#barChart").selectAll("rect")
-        .data(dataset);
+        .data(dataset)
+        .attr("class", "update");
 
-    svg.attr("class", "update");
-
+    // Position all Data
     svg.enter().append("rect")
         .attr("class", "enter")
         .attr("x", function(d, i){
                 return scaleX(d[0])+paddingBars;
         });
 
+    // Height of all data:
     svg.attr("height", function(d){
             if(d != null)
                 return h-scaleY(d[1])-paddingSides;
@@ -208,9 +211,11 @@ function drawBarGraph(JSONtoDisplay){
                 return h-paddingSides;
         });
 
+    // Remove unused data
     svg.exit().remove();
 
-    //.attr("style", function(d){ // Filling them respectively
-    //    return "fill: " +  d[2] + ";";
-    //})
+    svg.attr("style", function(d){ // Filling them respectively
+        if(d != null)
+            return "fill: " +  d[2] + ";";
+    })
 }

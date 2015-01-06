@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1dc0b5e8-224a-4b40-bac3-b4eaf8251009" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/barGraph.js" afterPath="$PROJECT_DIR$/Web Files/barGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/code.js" afterPath="$PROJECT_DIR$/Web Files/code.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/index.html" afterPath="$PROJECT_DIR$/Web Files/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/style.css" afterPath="$PROJECT_DIR$/Web Files/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InfoVis_PubDB.iws" />
@@ -47,8 +44,8 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.21228448" vertical-offset="2523" max-vertical-offset="3757">
-                  <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.39547414" vertical-offset="2914" max-vertical-offset="3842">
+                  <caret line="193" column="30" selection-start-line="193" selection-start-column="30" selection-end-line="193" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -575,7 +572,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420544895590</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="filtering for award implemented">
+      <created>1420559035749</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1420559035749</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -679,7 +682,8 @@
     <MESSAGE value="added script-elements for jQuery and rangeSlider&#10;added rangeSlider to barGraph" />
     <MESSAGE value="the barGraph now displays filtered-out years as blue" />
     <MESSAGE value="added minimal number of publications to allFilters object" />
-    <option name="LAST_COMMIT_MESSAGE" value="added minimal number of publications to allFilters object" />
+    <MESSAGE value="filtering for award implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="filtering for award implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1120,8 +1124,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21228448" vertical-offset="2523" max-vertical-offset="3757">
-          <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.39547414" vertical-offset="2914" max-vertical-offset="3842">
+          <caret line="193" column="30" selection-start-line="193" selection-start-column="30" selection-end-line="193" selection-end-column="30" />
           <folding />
         </state>
       </provider>
