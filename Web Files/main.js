@@ -281,6 +281,8 @@ function updateDetailView(node){
 		newAuthorData.push(auth);
 	}
 
+
+
 	//UPDATE AUTHOR START
 	d3.select("#detail--auth").selectAll("div").remove();
 	var auth = d3.select("#detail--auth").selectAll("div")
