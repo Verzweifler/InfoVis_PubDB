@@ -13,7 +13,7 @@ var allFilters = {
 		filterForAward:false,	// True, if we want to filter for awards
 		filterValue:false		// Value of the filter, if set
 	},
-	minNumberOfPublications:3
+	minNumberOfPublications: 2
 };
 
 var publicationsJSON = [],
@@ -62,7 +62,9 @@ $(document).ready(function() {
 			var filteredJSON = filterPubJSON(publicationsJSON);
 
 			var edge = buildEdgeBundleJson(publicationsJSON);
-
+			/*
+			console.log("Edge JSON");
+			console.log(edge);
 			var counter = 0;
 			var limit = 3;
 			var edgeReduced = [];
@@ -81,6 +83,8 @@ $(document).ready(function() {
 			edgeReduced.push(object);
 
 			createEdgeBundle(edgeReduced);
+			*/
+			createEdgeBundle(edge);
 
 			$('#loadingImage').hide();
 		}else{

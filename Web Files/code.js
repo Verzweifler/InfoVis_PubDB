@@ -9,6 +9,22 @@
  * @return a filtered publicationJSOn object.
  */
 function filterPubJSON(toFilter){
+    /*
+    // Reflects set filters
+    var allFilters = {
+        years: {from: minYear,
+            to: maxYear},
+        title: "",
+        description: "",
+        keywords: [],
+        authors: [],
+        award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
+            filterForAward:false,	// True, if we want to filter for awards
+            filterValue:false		// Value of the filter, if set
+        },
+        minNumberOfPublications: 3
+    };
+    */
     var result = toFilter;
 
     // Iterate over every publication
@@ -31,15 +47,6 @@ function buildEdgeBundleJson(pubJSONArray){
         {"name": "root.artista", "imports": []},
         {"name": "root.empreendedor", "imports": []}
     ];
-    */
-    /*
-    var json = [];
-    var obj = {};
-    obj.name = "root.Manuel_Jose";
-    obj.imports = [];
-    obj.imports.push("root.w");
-    obj.imports.push("root.ys");
-    json.push(obj);
     */
 
 
@@ -88,10 +95,40 @@ function buildEdgeBundleJson(pubJSONArray){
 
     });
 
+    var edgeReduced = json;
+    var limit = 2;    //starte immer bei 2 (falls gekürzt werden muss, dann fallen alle weg die weniger als 2(also nur 1) werk haben
+    var counter = 0;
+    var lengthCounter = edgeReduced.length;
 
+    var others = {};
+    others.name = "root.Others";
+    others.totalPublications = 0;
+    others.coAuthors = [];
+    others.coAuthorsPublications = [1];
 
+    while(lengthCounter > 300){
+        counter = 0;
+        lengthCounter = 0;
+        limit++;
 
+        edgeReduced.forEach(function(author,index){
+            if (author.totalPublications < limit){
+                counter++;
+                delete edgeReduced[index];
+            }else{
+                //edgeReduced.push(d);
+                lengthCounter++;
+            }
 
-    return json;
+        });
+    }
+
+    if(counter > 0){//falls eins weggefallen ist, füg den "Others" eintrag hinzu
+        edgeReduced.push(others);
+    }
+
+    allFilters.minNumberOfPublications = limit;
+
+    return edgeReduced;
 
 }
