@@ -157,9 +157,6 @@ function createBarGraph(pubJSON){
 
 function drawBarGraph(JSONtoDisplay){
 
-    allFilters.award.filterForAward=true;
-    allFilters.award.filterValue=true;
-
     // Calculate new dataset based on filters:
     var dataset = new Array(totalYears);
     var yearNow = new Date().getFullYear();
@@ -182,23 +179,24 @@ function drawBarGraph(JSONtoDisplay){
     });
     dataset.reverse();
 
+    console.log(dataset);
 
-    // Allocating new data to all rects:
+    // Allocating new data to all rects and labels:
 
     // Joining new data to existing data
-    var svg = d3.select("#barChart").selectAll("rect")
+    var rects = d3.select("#barChart").selectAll("rect")
         .data(dataset)
         .attr("class", "update");
 
     // Position all Data
-    svg.enter().append("rect")
+    rects.enter().append("rect")
         .attr("class", "enter")
         .attr("x", function(d, i){
-                return scaleX(d[0])+paddingBars;
+            return scaleX(d[0])+paddingBars;
         });
 
     // Height of all data:
-    svg.attr("height", function(d){
+    rects.attr("height", function(d){
             if(d != null)
                 return h-scaleY(d[1])-paddingSides;
             else
@@ -207,15 +205,47 @@ function drawBarGraph(JSONtoDisplay){
         .attr("y", function(d){
             if(d != null)
                 return scaleY(d[1]);
-            else
-                return h-paddingSides;
         });
 
     // Remove unused data
-    svg.exit().remove();
+    rects.exit().remove();
 
-    svg.attr("style", function(d){ // Filling them respectively
+    rects.attr("style", function(d){ // Filling them respectively
         if(d != null)
             return "fill: " +  d[2] + ";";
-    })
+    });
+
+    // Same for labels:
+    var labels = d3.select("#barChart").selectAll("text")
+        .data(dataset)
+        .attr("class", "update");
+
+    labels.enter().append("text")
+        .attr("class", "enter")
+        .attr("x", function(d, i) {
+            return scaleX(d[0]) + (w / totalYears) / 2;
+        });
+
+    labels.attr("y", function(d) {
+        if(d != null)
+            if(h-scaleY(d[1])>paddingSides+15){
+                return scaleY(d[1])+14;
+            } else
+                return scaleY(d[1])-5;
+    }).text(function(d) {
+        if(d != null)
+            return d[1];
+    });
+
+    labels.exit().remove();
+
+    labels.attr("font-family", "sans-serif")
+        .attr("font-size", "11px")
+        .attr("fill", function(d){
+            if(d != null)
+                if(h-scaleY(d[1])>paddingSides+15)
+                    return "white";
+                else
+                    return "black";
+        });
 }
