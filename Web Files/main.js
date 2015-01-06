@@ -70,7 +70,8 @@ $(document).ready(function() {
 			$('#loadingImage').hide();
 		}else{
 			$('#loadingImage').hide();
-			$('#publications').val(data.msg).show();
+			alert(data.msg);
+			//$('#publications').val(data.msg).show();
 		}
 	})
 
@@ -246,41 +247,51 @@ function createEdgeBundle(coopJson){
 }
 
 function updateDetailView(node){
+	console.log("node");
+	console.log(node);
 	var newAuthorData = [];
 	var newCoAuthorsData = [];
 	var newPubData = [];
+	var newOthers = [];
+
 	if(node != null){ //falls nicht deselektiert wurde
-		var auth ={};
-		auth.name = node.name;
-		auth.pub = node.totalPublications;
-		//newAuthorData.push(node.name);
-		newAuthorData.push(auth);
+		newAuthorData.push(node);
 		newCoAuthorsData = node.coAuthors;
+		newPubData = node.pub;
 
-		//generate structure for publications
-		filteredJSON.forEach(function(actPublication){
-			actPublication.authors.forEach(function(actAuthor){
-				var aName = "root."+actAuthor.name;
-				if(node.name == aName){
-					var publicationData = {};
-					publicationData.name = actPublication.title.name;
-					publicationData.url = [];
-					if(actPublication.downloads.length != 0){
-						publicationData.url.push(actPublication.downloads[0]);
-					}
-					//newPubData.push(actPublication.title.name);
-					newPubData.push(publicationData);
-				}
-			});
-
-		});
+		if(newAuthorData[0].name == "root.Others"){
+			newOthers = node.authors;
+		}
+		//var auth ={};
+		//auth.name = node.name;
+		//auth.pub = node.totalPublications;
+		////newAuthorData.push(node.name);
+		//newAuthorData.push(auth);
+		//newCoAuthorsData = node.coAuthors;
+        //
+		////generate structure for publications
+		//filteredJSON.forEach(function(actPublication){
+		//	actPublication.authors.forEach(function(actAuthor){
+		//		var aName = "root."+actAuthor.name;
+		//		if(node.name == aName){
+		//			var publicationData = {};
+		//			publicationData.name = actPublication.title.name;
+		//			publicationData.url = [];
+		//			if(actPublication.downloads.length != 0){
+		//				publicationData.url.push(actPublication.downloads[0]);
+		//			}
+		//			//newPubData.push(actPublication.title.name);
+		//			newPubData.push(publicationData);
+		//		}
+		//	});
+        //
+		//});
 	}else{//deselektierung
 		var auth ={};
 		auth.name = "Currently no author selected";
-		auth.pub = 0;
+		auth.totalPublications = 0;
 		newAuthorData.push(auth);
 	}
-
 
 
 	//UPDATE AUTHOR START
@@ -289,10 +300,27 @@ function updateDetailView(node){
 		.data(newAuthorData);
 
 	//Add Text and update Input
-	auth.enter().append("div").text(function(d) { return (d.pub == 0 ? d.name :  d.name.substring(5)+ ", Publications: "+ d.pub); });
+	auth.enter().append("div").text(function(d) { return (d.totalPublications == 0 ? d.name :  d.name.substring(5)+ ", Publications: "+ d.totalPublications); });
 	// Remove old elements as needed.
 	//auth.exit().remove();
 	//UPDATE AUTHOR END
+
+
+	d3.select("#detail--others-list").selectAll("div").remove();
+	//CASE FOR OTHERS START
+	if(newOthers.length != 0){
+		d3.select("#detail--others").style("display", "");
+		var others = d3.select("#detail--others-list").selectAll("div")
+			.data(newOthers);
+
+		//Add Text and update Input
+		others.enter().append("div").text(function(d) { return d.substring(5); });
+
+	}else{
+		d3.select("#detail--others").style("display", "none");
+	}
+	//CASE FOR OTHERS END
+
 
 	//UPDATE COAUTHORS START
 	d3.select("#detail--coauth-list").selectAll("div").remove();
@@ -311,7 +339,7 @@ function updateDetailView(node){
 		.data(newPubData);
 
 	//Add Text and update Input
-	pub.enter().append("div").text(function(d) { return d.name; });
+	pub.enter().append("div").text(function(d) { return d.name+"; "; });
 	//pub.text(function(d) { return d.name; });
 
 	pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("(download)").attr("target","_blank");

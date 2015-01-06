@@ -79,10 +79,28 @@ function buildEdgeBundleJson(pubJSONArray){
                 object.totalPublications = 1;
                 object.coAuthors = [];
                 object.coAuthorsPublications = [];
+                object.pub = [];
+
+                var publicationData = {};
+                publicationData.name = actPublication.title.name;
+                publicationData.url = [];
+                if(actPublication.downloads.length != 0){
+                    publicationData.url.push(actPublication.downloads[0]);
+                }
+                object.pub.push(publicationData);
+
                 json.push(object);
                 index = json.length-1;
             }else{   // case existed   --> publications ++
                 json[index].totalPublications++;
+
+                var publicationData = {};
+                publicationData.name = actPublication.title.name;
+                publicationData.url = [];
+                if(actPublication.downloads.length != 0){
+                    publicationData.url.push(actPublication.downloads[0]);
+                }
+                json[index].pub.push(publicationData);
             }
 
             // ... look at other authors...
@@ -128,6 +146,7 @@ function buildEdgeBundleJson(pubJSONArray){
         others.coAuthors = [];
         others.coAuthorsPublications = [];
         others.totalPublications = 0;
+        others.pub = [];
 
         edgeReduced.forEach(function(author,index){
             if (author.totalPublications < limit){
@@ -138,6 +157,12 @@ function buildEdgeBundleJson(pubJSONArray){
                     var authIndex = others.coAuthors.map(function(e) { return e; }).indexOf(coAuthor);
                     if(authIndex < 0){
                         others.coAuthors.push(coAuthor);
+                    }
+                });
+                author.pub.forEach(function(publication){
+                    var pubIndex = others.pub.map(function(e) { return e.name; }).indexOf(publication.name);
+                    if(pubIndex < 0){
+                        others.pub.push(publication);
                     }
                 });
                 delete edgeReduced[index];
@@ -164,6 +189,7 @@ function buildEdgeBundleJson(pubJSONArray){
                 edgeReduced[authIndex].coAuthors.push("root.Others");
             }
         });
+        others.totalPublications = others.pub.length;
 
         edgeReduced.push(others);
     }

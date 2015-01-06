@@ -80,18 +80,24 @@
     height:20%;
 }
 
-#detail--coauth-list{
-    width: 100%;
-    height: 15%;
-    overflow: scroll;
-}
-
+#detail--coauth-list,
+#detail--others-list,
 #detail--pub-list{
     width: 100%;
     height: 15%;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
+#detail--coauth-list div,
+#detail--others-list div,
+#detail--pub-list div{
+    border:1px solid black;
+}
+
+
 #detail--coauth-list div:hover{
+    /*
     cursor:pointer;
+    */
 }
