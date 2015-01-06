@@ -12,7 +12,8 @@ var allFilters = {
 	award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
 		filterForAward:false,	// True, if we want to filter for awards
 		filterValue:false		// Value of the filter, if set
-	}
+	},
+	minNumberOfPublications:3
 };
 
 var publicationsJSON = [],
