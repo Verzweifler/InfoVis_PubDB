@@ -101,29 +101,56 @@ function buildEdgeBundleJson(pubJSONArray){
     var lengthCounter = edgeReduced.length;
 
     var others = {};
-    others.name = "root.Others";
-    others.totalPublications = 0;
-    others.coAuthors = [];
-    others.coAuthorsPublications = [1];
+
 
     while(lengthCounter > 300){
         counter = 0;
         lengthCounter = 0;
         limit++;
 
+        others = {};
+        others.name = "root.Others";
+        others.authors = [];
+        others.coAuthors = [];
+        others.coAuthorsPublications = [];
+        others.totalPublications = 0;
+
         edgeReduced.forEach(function(author,index){
             if (author.totalPublications < limit){
                 counter++;
+                //erstell das others object
+                others.authors.push(author.name);
+                author.coAuthors.forEach(function(coAuthor){
+                    var authIndex = others.coAuthors.map(function(e) { return e; }).indexOf(coAuthor);
+                    if(authIndex < 0){
+                        others.coAuthors.push(coAuthor);
+                    }
+                });
                 delete edgeReduced[index];
             }else{
-                //edgeReduced.push(d);
                 lengthCounter++;
             }
 
         });
     }
 
+
     if(counter > 0){//falls eins weggefallen ist, füg den "Others" eintrag hinzu
+        //console.log(others);
+        //console.log("Authors: "+others.authors.length);
+        //console.log("CoAuthors: "+others.coAuthors.length);
+        //console.log("Allgemein Authors: "+ json.length);
+        //var x = json.length-lengthCounter;
+        //console.log("Dif: "+ x);
+
+        //Add "Others" to coAuthors if they were reduced
+        others.coAuthors.forEach(function(author){
+            var authIndex = edgeReduced.map(function(e) { return e.name; }).indexOf(author);
+            if (authIndex > -1){
+                edgeReduced[authIndex].coAuthors.push("root.Others");
+            }
+        });
+
         edgeReduced.push(others);
     }
 

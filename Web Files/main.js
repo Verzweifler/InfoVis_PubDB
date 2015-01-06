@@ -320,7 +320,7 @@ $(document).ready(function() {
 		pub.enter().append("text");
 		pub.text(function(d) { return d.name; });
 
-		pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("(download)");
+		pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("(download)").attr("target","_blank");
 
 		//.append("a").attr("href", function(d){return (d.url.length != 0 ?  d.url[0] : "");}).html("(download)")
 		// Remove old elements as needed.
