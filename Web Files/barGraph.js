@@ -2,8 +2,8 @@
  * Created by Fabian on 03.01.2015.
  */
 
-var scaleX;
-var scaleY;
+//var scaleX;
+//var scaleY;
 // Some necessary parameters:
 var w = 600;
 var h = 300;
@@ -39,15 +39,14 @@ function createBarGraph(pubJSON){
 
     totalYears= dataset.length;
 
-    // Preparing the scales, so the bars fit in width and height:
-    // X-Axis: Years
-    scaleX = d3.scale.linear()
+    // Preparing the scales, so the bars fit in width and height: X-Axis: Years
+    var scaleX = d3.scale.linear()
         .domain([minYear,maxYear])
         .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
                                                     // thus enabling us to draw an x-Axis
 
     // Scaling the height of the bars
-    scaleY = d3.scale.linear()                  // Mapping the values on the height...
+    var scaleY = d3.scale.linear()                  // Mapping the values on the height...
         .domain([0, d3.max(dataset, function(d){    // from the range of the dataset...
             return d[1];
         })])
@@ -179,7 +178,18 @@ function drawBarGraph(JSONtoDisplay){
     });
     dataset.reverse();
 
-    console.log(dataset);
+    // Preparing the scales, so the bars fit in width and height: X-Axis: Years
+    var scaleX = d3.scale.linear()
+        .domain([minYear,maxYear])
+        .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
+                                                    // thus enabling us to draw an x-Axis
+
+    // Scaling the height of the bars
+    var scaleY = d3.scale.linear()                  // Mapping the values on the height...
+        .domain([0, d3.max(dataset, function(d){    // from the range of the dataset...
+            return d[1];
+        })])
+        .range([h-paddingSides, paddingSides]);     // ... to the height of the plotting are
 
     // Allocating new data to all rects and labels:
 
