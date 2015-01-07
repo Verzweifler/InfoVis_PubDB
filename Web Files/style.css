@@ -89,12 +89,7 @@
     padding-left:30px;
 }
 
-#howTo{
-    padding-right:100px;
-    float: right;
-}
-
-
+#howTo,
 #sidebarCircle{
      float:right;
      width:30%;
