@@ -154,7 +154,7 @@ function createEdgeBundle(coopJson){
 		}
 
 		//updateDetailsView
-		update();
+		updateBarGraph();
 		updateDetailView(currentlySelectedNode);
 
 		//Reset Classes START

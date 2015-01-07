@@ -3,6 +3,7 @@
  */
 
 function update(){
+    currentlySelectedNode = null;
     filteredJSON = filterPubJSON();
     var edge = buildEdgeBundleJson(filteredJSON);
     createEdgeBundle(edge);
@@ -48,7 +49,7 @@ function filterPubJSON(){
                 pushThis=false;
             }
         }
-        if(allFilters.keywords.length != 0){
+        if(allFilters.keywords.length != 0 && pushThis){
             if(actPub.keywords.length == 0){
                 pushThis=false;
             }else{
