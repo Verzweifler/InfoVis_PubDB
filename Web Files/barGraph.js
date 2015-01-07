@@ -128,7 +128,14 @@ function createBarGraph(){
     svg.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(" + paddingSides + ", "+ "0)")
-        .call(yAxis);
+        .call(yAxis)
+        .append("text")
+        //.attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("x", 38)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Publications");
 
     var colorScale = d3.scale.ordinal()
         .range(pubColors)
@@ -139,7 +146,7 @@ function createBarGraph(){
         .enter().append("g")
         .attr("class", "legend")
         .attr("transform", function(d, i){
-            return "translate(50, " + (20+i*20) + ")";
+            return "translate(80, " + (5+i*20) + ")";
         });
 
     legend.append("rect")

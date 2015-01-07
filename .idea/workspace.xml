@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1dc0b5e8-224a-4b40-bac3-b4eaf8251009" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/barGraph.js" afterPath="$PROJECT_DIR$/Web Files/barGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/index.html" afterPath="$PROJECT_DIR$/Web Files/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/style.css" afterPath="$PROJECT_DIR$/Web Files/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InfoVis_PubDB.iws" />
@@ -58,8 +56,8 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5269168" vertical-offset="0" max-vertical-offset="4862">
-                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.3050571" vertical-offset="2091" max-vertical-offset="4981">
+                  <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -92,7 +90,7 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4862">
+                <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4981">
                   <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
                   <folding />
                 </state>
@@ -748,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420657541782</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="merged">
+      <created>1420661267717</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1420661267717</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -782,7 +786,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327818" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14270669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14270669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31334022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -833,7 +837,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="replaced jquery 1.11.1 with jquery 2.1.3" />
     <MESSAGE value="replaced jquery 1.11.1 with jquery 2.1.3&#10;&#10;added base URL for www.medien.ifi.lmu.de, since given URLs only contain e.g. &quot;/forschung/...&quot;" />
     <MESSAGE value="added file &quot;code.js&quot; containing the function buildCoopJSON:&#10;reads a publicationJSON object, and connects the authors of each publication with each other.&#10;example:&#10;publication 1 was written by authors A, B and C&#10;result:&#10;{&#10;totalAuthorCount: 3&#10;totalPublicationCount:1&#10;authors:{&#10;    A: {&#10;        B:1&#10;        C:1&#10;    }&#10;    B: {&#10;        A:1&#10;        C:1&#10;    }&#10;    C:{&#10;        A:1&#10;        B:1&#10;    }&#10;}&#10;}" />
     <MESSAGE value="refined comments in code.js" />
@@ -858,7 +861,8 @@
     <MESSAGE value="mouseover makes sets opacity to 0.5" />
     <MESSAGE value="mouseover text now in corresponding color" />
     <MESSAGE value="changed &quot;not selected&quot; color to the same gray of the year selector" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed &quot;not selected&quot; color to the same gray of the year selector" />
+    <MESSAGE value="merged" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1255,18 +1259,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4862">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.471246" vertical-offset="929" max-vertical-offset="2176">
           <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3050571" vertical-offset="2091" max-vertical-offset="4981">
+          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
           <folding />
         </state>
       </provider>
