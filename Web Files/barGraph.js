@@ -81,13 +81,13 @@ function createBarGraph(){
         .style("fill", function(d, i){
             return pubColors[i];
         })
-        .on("mouseover", function(d){
+        .on("mouseover", function(d, i){
             svg.select("#barInfo").text(function(){
                 return d.y1- d.y0;
             })
                 .attr("font-size", "20px")
                 .attr("font-family", "sans-serif")
-                .attr("fill", "black");
+                .style("fill", pubColors[i]);
 
             d3.select(d3.event.target).classed("highlight", true);
 
