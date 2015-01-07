@@ -3,9 +3,9 @@ var minYear = 1994;
 var maxYear = 2015;
 var pubColors = [
 	// all:
-	"steelblue",
+	"#0000CD",
 	// remaining:
-	"#d62728",
+	"#86afd8",
 	// specific:
 	"#2ca02c"
 ]

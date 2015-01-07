@@ -1,6 +1,6 @@
 .node {
     font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    fill: #bbb;
+    fill: #86afd8;
 }
 
 .node:hover {
@@ -10,7 +10,7 @@
 }
 
 .link {
-    stroke: steelblue;
+    stroke: #86afd8;
     stroke-opacity: .4;
     fill: none;
     pointer-events: none;
@@ -19,7 +19,7 @@
 .node--source,
 .node--target{
     font-weight: 700;
-    fill: #d62728;
+    fill: #a70b0b;
 }
 
 .node--selected{
@@ -31,7 +31,7 @@
 .link--target {
     stroke-opacity: 1;
     stroke-width: 3px;
-    stroke: #d62728;
+    stroke: #A70B0B;
 }
 
 #barChartArea{
