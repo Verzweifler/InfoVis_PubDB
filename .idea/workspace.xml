@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc0b5e8-224a-4b40-bac3-b4eaf8251009" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/barGraph.js" afterPath="$PROJECT_DIR$/Web Files/barGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/main.js" afterPath="$PROJECT_DIR$/Web Files/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/style.css" afterPath="$PROJECT_DIR$/Web Files/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -58,8 +56,8 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.49461207" vertical-offset="952" max-vertical-offset="4862">
-                  <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.25646552" vertical-offset="969" max-vertical-offset="4862">
+                  <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -72,8 +70,8 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9096706" vertical-offset="742" max-vertical-offset="1700">
-                  <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.49415517" vertical-offset="385" max-vertical-offset="1768">
+                  <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -666,7 +664,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420650605416</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="mouseover-information for elements in the bar Graph">
+      <created>1420655157041</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1420655157041</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -751,7 +755,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Node Server Initial Commit" />
     <MESSAGE value="re-organized file structure" />
     <MESSAGE value="re-organized file structure++&#10;both json send to client side&#10;handling complete generation on server&#10;sending when keywords are found" />
     <MESSAGE value="added d3.js to /WebFiles/assets" />
@@ -776,7 +779,8 @@
     <MESSAGE value="barGraph now consists of stacked bars." />
     <MESSAGE value="TRANSITIONS; BITCH!" />
     <MESSAGE value="Graph now filters for publication titles instead of author names, thus being able to detect &quot;others&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Graph now filters for publication titles instead of author names, thus being able to detect &quot;others&quot;" />
+    <MESSAGE value="mouseover-information for elements in the bar Graph" />
+    <option name="LAST_COMMIT_MESSAGE" value="mouseover-information for elements in the bar Graph" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,8 +1186,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9096706" vertical-offset="742" max-vertical-offset="1700">
-          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.49415517" vertical-offset="385" max-vertical-offset="1768">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding />
         </state>
       </provider>
