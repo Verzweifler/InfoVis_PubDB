@@ -23,21 +23,21 @@ function update(){
  */
 function filterPubJSON(){
     /*
-    // Reflects set filters
-    var allFilters = {
-        years: {from: minYear,
-            to: maxYear},
-        title: "",
-        description: "",
-        keywords: [],
-        authors: [],
-        award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
-            filterForAward:false,	// True, if we want to filter for awards
-            filterValue:false		// Value of the filter, if set
-        },
-        minNumberOfPublications: 3
-    };
-    */
+     // Reflects set filters
+     var allFilters = {
+     years: {from: minYear,
+     to: maxYear},
+     title: "",
+     description: "",
+     keywords: [],
+     authors: [],
+     award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
+     filterForAward:false,	// True, if we want to filter for awards
+     filterValue:false		// Value of the filter, if set
+     },
+     minNumberOfPublications: 3
+     };
+     */
     var result = [];
 
     // Iterate over every publication
@@ -103,14 +103,14 @@ function filterPubJSON(){
 
 function buildEdgeBundleJson(pubJSONArray){
     /*
-    var generate = [
-        {"name": "root.Manuel_Jose", "imports": ["root.vivant", "root.designer", "root.artista", "root.empreendedor"]},
-        {"name": "root.vivant", "imports": []},
-        {"name": "root.designer", "imports": []},
-        {"name": "root.artista", "imports": []},
-        {"name": "root.empreendedor", "imports": []}
-    ];
-    */
+     var generate = [
+     {"name": "root.Manuel_Jose", "imports": ["root.vivant", "root.designer", "root.artista", "root.empreendedor"]},
+     {"name": "root.vivant", "imports": []},
+     {"name": "root.designer", "imports": []},
+     {"name": "root.artista", "imports": []},
+     {"name": "root.empreendedor", "imports": []}
+     ];
+     */
 
 
     var json = [];
@@ -165,8 +165,8 @@ function buildEdgeBundleJson(pubJSONArray){
                         json[index].coAuthors.push(coAuthor);
                         json[index].coAuthorsPublications.push(1);
                     }else{
-                      //basst  könnte man noch mit index rumspielen und ein 2tes array mit nem counter für gemeinsame publicationen machen
-                      json[index].coAuthorsPublications[coIndex]++;
+                        //basst  könnte man noch mit index rumspielen und ein 2tes array mit nem counter für gemeinsame publicationen machen
+                        json[index].coAuthorsPublications[coIndex]++;
                     }
 
                 }

@@ -282,30 +282,6 @@ function updateDetailView(node){
 		if(newAuthorData[0].name == "root.Others"){
 			newOthers = node.authors;
 		}
-		//var auth ={};
-		//auth.name = node.name;
-		//auth.pub = node.totalPublications;
-		////newAuthorData.push(node.name);
-		//newAuthorData.push(auth);
-		//newCoAuthorsData = node.coAuthors;
-        //
-		////generate structure for publications
-		//filteredJSON.forEach(function(actPublication){
-		//	actPublication.authors.forEach(function(actAuthor){
-		//		var aName = "root."+actAuthor.name;
-		//		if(node.name == aName){
-		//			var publicationData = {};
-		//			publicationData.name = actPublication.title.name;
-		//			publicationData.url = [];
-		//			if(actPublication.downloads.length != 0){
-		//				publicationData.url.push(actPublication.downloads[0]);
-		//			}
-		//			//newPubData.push(actPublication.title.name);
-		//			newPubData.push(publicationData);
-		//		}
-		//	});
-        //
-		//});
 	}else{//deselektierung
 		var auth ={};
 		auth.name = "Currently no author selected";
