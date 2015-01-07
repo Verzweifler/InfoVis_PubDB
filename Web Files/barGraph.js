@@ -10,45 +10,28 @@ var h = 300;
 var paddingBars=2;
 var paddingSides = 25;
 var totalYears=0;
+var scaleX;
+var scaleY;
 
 // Receives a publications JSON, containing information about publications; mainly author and year
-function createBarGraph(pubJSON){
+function createBarGraph(){
 
-    var dataset = new Array();
-    var yearNow = new Date().getFullYear();
+    var dataset = getBarDataset();
 
-    // Remodeling the dataset for our purposes:
-    // Each array slot holds a pair: [year, pubCount]
-    pubJSON.forEach(function(d){
-        var index = yearNow-parseInt(d.year);
-
-        // Inserting a dummy for the newly found index:
-        while(dataset.length < index+1)
-            if(d.year < allFilters.years.from || d.year > allFilters.years.to)
-                dataset.push([d.year, 0, "rgb(0,0,255);", []]);
-            else
-                dataset.push([d.year, 0, "rgb(255,0,0);", []]);
-
-        // Writing the actual data:
-        dataset[index][1]++;
-        dataset[index][3].push(d);    // Just append the whole publication...
-    });
-
-    // Put 2015 at last place
-    dataset.reverse();
+    console.log(dataset);
 
     totalYears= dataset.length;
 
     // Preparing the scales, so the bars fit in width and height: X-Axis: Years
-    var scaleX = d3.scale.linear()
+    scaleX = d3.scale.linear()
         .domain([minYear,maxYear])
         .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
                                                     // thus enabling us to draw an x-Axis
 
     // Scaling the height of the bars
-    var scaleY = d3.scale.linear()                  // Mapping the values on the height...
+    scaleY = d3.scale.linear()                  // Mapping the values on the height...
         .domain([0, d3.max(dataset, function(d){    // from the range of the dataset...
-            return d[1];
+            return d.numbers[0].y1;
         })])
         .range([h-paddingSides, paddingSides]);     // ... to the height of the plotting area
 
@@ -66,57 +49,51 @@ function createBarGraph(pubJSON){
     var svg = d3.select("#barChart")
         .append("svg")
         .attr("width", w)
-        .attr("height", h);
+        .attr("height", h)
+        .attr("id", "barSVG");
 
-    // Drawing the rectangles:
-    svg.selectAll("rect")
+    // Creating hulls for the stacked bars:
+    var barHulls = svg.selectAll(".hull")
         .data(dataset)
-        .enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", function(d, i){
-            return scaleX(d[0])+paddingBars;
-        })
-        .attr("y", function(d){
-            return scaleY(d[1]);
-        })
-        .attr("width", w/totalYears-paddingBars*2)
-        .attr("height", function(d){
-            return h-scaleY(d[1])-paddingSides;
-        })
-        .attr("style", function(d){
-            return "fill: " + d[2];
-        })
-        .attr("onclick", function(d){
-            return "alert(\"" + d[0] + ": " + d[1] + " Arbeiten\");";
+        .enter().append("g")
+        .attr("class", "g")
+        .attr("transform", function(d){
+            return "translate(" + scaleX(d.year) + ",0)";
         });
 
-    // Putting labels on it:
+    // Drawing the actual bars inside the hulls:
+    barHulls.selectAll("rect")
+        .data(function(d){return d.numbers;})
+        .enter().append("rect")
+        .attr("width", w/totalYears-paddingBars*2)
+        .attr("y", function(d){
+            return scaleY(d.y1);
+        })
+        .attr("height", function(d){
+            return scaleY(d.y0)-scaleY(d.y1);
+        })
+        .style("fill", function(d, i){
+            return pubColors[i];
+        });
+
+    // Labels for the total height of the bars:
     svg.selectAll("text")
         .data(dataset)
         .enter()
         .append("text")
         .text(function(d) {
-            return d[1];
+            return d.numbers[1].y1;
         })
         .attr("text-anchor", "middle")
         .attr("x", function(d, i) {
-            return scaleX(d[0]) + (w / totalYears) / 2;
+            return scaleX(d.year) + (w / totalYears) / 2;
         })
         .attr("y", function(d) {
-            if(h-scaleY(d[1])>paddingSides+15){
-                return scaleY(d[1])+14;
-            } else
-                return scaleY(d[1])-5;
+            return scaleY(d.numbers[0].y1)-5;
         })
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
-        .attr("fill", function(d){
-            if(h-scaleY(d[1])>paddingSides+15)
-                return "white";
-            else
-                return "black";
-        });
+        .attr("fill", "black");
 
     // Appending x-Axis:
     svg.append("g")
@@ -148,112 +125,109 @@ function createBarGraph(pubJSON){
         allFilters.years.from=data.values.min;
         allFilters.years.to=data.values.max;
 
-        filterPubJSON();
+        update();
 
     });
 
 }
 
-function drawBarGraph(JSONtoDisplay){
+/**
+ * This function draws three different types of bars into the barGraph-Area.
+ * The three types are encoded by color, and contain three degrees of information:
+ * - All information: The whole publicationsJSON
+ * - remaining information: What is left of the publicationsJSON, after the filters have been applied
+ * - specific information: publications connected to a selected author (from currentlySelectedNode)
+ */
+function updateBarGraph(){
 
     // Calculate new dataset based on filters:
-    var dataset = new Array(totalYears);
-    var yearNow = new Date().getFullYear();
+    var dataset = getBarDataset();
 
-    JSONtoDisplay.forEach(function(d) {
-        var index = yearNow - parseInt(d.year);
-
-        // Inserting a dummy for the newly found index:
-        if(dataset[index] == null)
-            // Apply year filter:
-            if (d.year < allFilters.years.from || d.year > allFilters.years.to)
-                //dataset.push([d.year, 0, "rgb(0,0,255);", []]);
-                dataset[index] = [d.year, 0, "rgb(0,0,255);", []];
-            else
-                dataset[index] = [d.year, 0, "rgb(255,0,0);", []];
-
-        // Write the actual data to the new dataset object:
-        dataset[index][1]++;
-        dataset[index][3].push(d);    // Just append the whole publication...
-    });
-    dataset.reverse();
-
-    // Preparing the scales, so the bars fit in width and height: X-Axis: Years
-    var scaleX = d3.scale.linear()
-        .domain([minYear,maxYear])
-        .range([paddingSides, w-paddingSides*2]);   // ... on the width of the graph area
-                                                    // thus enabling us to draw an x-Axis
-
-    // Scaling the height of the bars
-    var scaleY = d3.scale.linear()                  // Mapping the values on the height...
-        .domain([0, d3.max(dataset, function(d){    // from the range of the dataset...
-            return d[1];
-        })])
-        .range([h-paddingSides, paddingSides]);     // ... to the height of the plotting are
-
-    // Allocating new data to all rects and labels:
-
-    // Joining new data to existing data
-    var rects = d3.select("#barChart").selectAll("rect")
+    // Allocating new data to all rects
+    var allHulls = d3.select("#barSVG").selectAll("g")
         .data(dataset)
         .attr("class", "update");
 
-    // Position all Data
-    rects.enter().append("rect")
-        .attr("class", "enter")
-        .attr("x", function(d, i){
-            return scaleX(d[0])+paddingBars;
-        });
+    //Joining new data to existing data
+    var rects = allHulls.selectAll("rect")
+        .data(function(d){return d.numbers;})
+        .attr("class", "update");
 
     // Height of all data:
-    rects.attr("height", function(d){
-            if(d != null)
-                return h-scaleY(d[1])-paddingSides;
-        })
-        .attr("y", function(d){
-            if(d != null)
-                return scaleY(d[1]);
+    rects.attr("y", function(d){
+            return scaleY(d.y1);
+        }).attr("height", function(d){
+            return scaleY(d.y0)-scaleY(d.y1);
+        }).style("fill", function(d, i){
+            return pubColors[i];
         });
+
+    rects.style("fill", function(d, i){
+        return pubColors[i];
+    });
 
     // Remove unused data
     rects.exit().remove();
+}
 
-    rects.attr("style", function(d){ // Filling them respectively
-        if(d != null)
-            return "fill: " +  d[2] + ";";
+function getBarDataset(){
+    var dataset = new Array();
+    var yearNow = new Date().getFullYear();
+
+    // Read all Data:
+    publicationsJSON.forEach(function(d){
+        var index = yearNow-parseInt(d.year);
+
+        // Write initial placeholders, if necessary:
+        if(dataset[index] == null)
+            dataset[index] = {
+                year: d.year,
+                // all, remaining, specific
+                numbers: [{y0:0, y1:0}, {y0:0, y1:0}, {y0:0, y1:0}]
+            }
+
+        // Writing the actual data:
+        dataset[index].numbers[0].y1++;
     });
 
-    // Same for labels:
-    var labels = d3.select("#barChart").selectAll("text")
-        .data(dataset)
-        .attr("class", "update");
 
-    labels.enter().append("text")
-        .attr("class", "enter")
-        .attr("x", function(d, i) {
-            return scaleX(d[0]) + (w / totalYears) / 2;
-        });
+    // Read filtered data:
+    filteredJSON.forEach(function(d){
+        var index = yearNow-parseInt(d.year);
 
-    labels.attr("y", function(d) {
-        if(d != null)
-            if(h-scaleY(d[1])>paddingSides+15){
-                return scaleY(d[1])+14;
-            } else
-                return scaleY(d[1])-5;
-    }).text(function(d) {
-        if(d != null)
-            return d[1];
+        // No need for checking unll values, since all data have already been written:
+        dataset[index].numbers[1].y1++;
     });
 
-    labels.exit().remove();
 
-    labels.attr("font-family", "sans-serif")
-        .attr("font-size", "11px")
-        .attr("fill", function(d){
-            if(d != null)
-                if(h-scaleY(d[1])>paddingSides+15)
-                    return "white";
-                else
-                    return "black";
+    // Read selected data:
+    if(currentlySelectedNode != null)
+        filteredJSON.forEach(function(d){
+            var index = yearNow-parseInt(d.year);
+
+            // Only count stuff from the selected author:
+            var selected=false;
+            d.authors.forEach(function(actAuthor){
+                if(actAuthor.name == currentlySelectedNode.key)
+                    selected=true;
+            });
+
+            if(selected)
+            // Writing the actual data:
+                dataset[index].numbers[2].y1++;
         });
+
+
+    // Don't count doubles and triples: *remaining* must not be counted in *all*,
+    // and *specific* must not be counted in *remaining*
+    dataset.forEach(function(d){
+        // all, remaining, specific
+        d.numbers[0].y0 = d.numbers[1].y1;   // Since *specific* is a part of *remaining*, it must not be subtracted here...
+        d.numbers[1].y0 = d.numbers[2].y1; // ... but here.
+    });
+
+    // Put 2015 at last place
+    dataset.reverse();
+
+    return dataset;
 }

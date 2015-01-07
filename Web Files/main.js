@@ -1,6 +1,13 @@
 
 var minYear = 1994;
 var maxYear = 2015;
+var pubColors = [
+	// all, remaining, specific
+	"rgb(0,0,255)",
+	"rgb(255,0,0)",
+	"rgb(0,255,0)"
+]
+
 // Reflects set filters
 var allFilters = {
 	years: {from: minYear,
@@ -50,8 +57,6 @@ $(document).ready(function() {
 			"keywords":["keystroke dynamics","mobile","touch","biometrics"]}
 			*/
 			publicationsJSON = data.publications;
-			filteredJSON = publicationsJSON;
-			createBarGraph(publicationsJSON);
 
 			// Authors format:
 			/*
@@ -63,9 +68,10 @@ $(document).ready(function() {
 			//$('#publications').val(JSON.stringify(data.publications)).show();
 			//$('#authors').val(JSON.stringify(data.authors)).show();
 
-			filteredJSON = filterPubJSON(publicationsJSON);
+			filteredJSON = filterPubJSON();
 			var edge = buildEdgeBundleJson(filteredJSON);
 			createEdgeBundle(edge);
+			createBarGraph();
 
 			$('#loadingImage').hide();
 		}else{
@@ -74,9 +80,6 @@ $(document).ready(function() {
 			//$('#publications').val(data.msg).show();
 		}
 	})
-
-
-
 
 });
 
@@ -151,6 +154,7 @@ function createEdgeBundle(coopJson){
 		}
 
 		//updateDetailsView
+		update();
 		updateDetailView(currentlySelectedNode);
 
 		//Reset Classes START
@@ -364,6 +368,7 @@ function awardFilter(e) {
 	}
 
 	var filtered = filterPubJSON();
+	update();
 }
 
 function keywordsFilter(form){
@@ -379,10 +384,12 @@ function keywordsFilter(form){
 		}
 	}
 	var filtered = filterPubJSON();
+	update();
 }
 
 function clearKeywordsFilter(form){
 	form.keywords.value = "";
 	allFilters.keywords = [];
 	var filtered = filterPubJSON();
+	update();
 }

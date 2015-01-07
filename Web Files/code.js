@@ -2,6 +2,13 @@
  * Created by Fabian on 02.01.2015.
  */
 
+function update(){
+    filteredJSON = filterPubJSON();
+    var edge = buildEdgeBundleJson(filteredJSON);
+    createEdgeBundle(edge);
+    updateBarGraph();
+}
+
 /**
  * Uses a globally visible filter object to apply set filters to the publicationJSON-object.
  * If a publication doesn't match a criteria, it is removed from the resul object.
@@ -31,9 +38,9 @@ function filterPubJSON(){
     publicationsJSON.forEach(function(actPub,index){
         var pushThis = true;
         // Filter for Years:
-        // if ((actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
-            // pushThis=false;
-        // }
+        if ((actPub.year < allFilters.years.from || actPub.year > allFilters.years.to)) {
+            pushThis=false;
+        }
         // Filter for Awards:
         if (allFilters.award.filterForAward) {
             // Filtering for awards:
@@ -64,11 +71,6 @@ function filterPubJSON(){
         }
     });
 
-    drawBarGraph(result);
-    var newCircle = buildEdgeBundleJson(result);
-    createEdgeBundle(newCircle);
-    console.log("result");
-    console.log(result);
     return result;
 }
 
