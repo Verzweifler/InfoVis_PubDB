@@ -105,37 +105,46 @@ function createEdgeBundle(coopJson){
 
 	d3.select("#circle").select("svg").remove();
 	var svg = d3.select("#circle").append("svg")
-		.attr("width", diameter)
-		.attr("height", diameter)
-		.append("g")
-		.attr("transform", "translate(" + radius + "," + radius + ")");
+			.attr("width", diameter)
+			.attr("height", diameter)
+			.append("g")
+			.attr("transform", "translate(" + radius + "," + radius + ")");
 
-	var link = svg.append("g").selectAll(".link"),
-		node = svg.append("g").selectAll(".node");
+		var link = svg.append("g").selectAll(".link"),
+			node = svg.append("g").selectAll(".node");
 
 
-	var nodes = cluster.nodes(packageHierarchy(coopJson)),
-		links = packageImports(nodes);
+		var nodes = cluster.nodes(packageHierarchy(coopJson)),
+			links = packageImports(nodes);
 
-	link = link
-		.data(bundle(links))
-		.enter().append("path")
-		.each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
-		.attr("class", "link")
-		.attr("d", line);
+		link = link
+			.data(bundle(links))
+			.enter().append("path")
+			.each(function (d) {
+				d.source = d[0], d.target = d[d.length - 1];
+			})
+			.attr("class", "link")
+			.attr("d", line);
 
-	node = node
-		.data(nodes.filter(function(n) { return !n.children; }))
-		.enter().append("text")
-		.attr("class", "node")
-		.attr("dy", ".31em")
-		.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
-		.style("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-		.text(function(d) { return d.key; })
-		.on("click",clickFunction);
+		node = node
+			.data(nodes.filter(function (n) {
+				return !n.children;
+			}))
+			.enter().append("text")
+			.attr("class", "node")
+			.attr("dy", ".31em")
+			.attr("transform", function (d) {
+				return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)");
+			})
+			.style("text-anchor", function (d) {
+				return d.x < 180 ? "start" : "end";
+			})
+			.text(function (d) {
+				return d.key;
+			})
+			.on("click", clickFunction);
 
-	d3.select(self.frameElement).style("height", diameter + "px");
-
+		d3.select(self.frameElement).style("height", diameter + "px");
 
 	function clickFunction(d) {
 

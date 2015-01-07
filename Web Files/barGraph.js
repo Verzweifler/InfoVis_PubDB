@@ -50,6 +50,14 @@ function createBarGraph(){
         .attr("height", h)
         .attr("id", "barSVG");
 
+    // Display information via mouseover:
+    var info = svg.append("text")
+        .attr("width", 45+paddingSides)
+        .attr("height", 45)
+        .attr("x", w-45)
+        .attr("y", 45)
+        .attr("id", "barInfo");
+
     // Creating hulls for the stacked bars:
     var barHulls = svg.selectAll(".hull")
         .data(dataset)
@@ -72,6 +80,21 @@ function createBarGraph(){
         })
         .style("fill", function(d, i){
             return pubColors[i];
+        })
+        .on("mouseover", function(d){
+            svg.select("#barInfo").text(function(){
+                return d.y1- d.y0;
+            })
+                .attr("font-size", "20px")
+                .attr("font-family", "sans-serif")
+                .attr("fill", "black");
+
+            d3.select(d3.event.target).classed("highlight", true);
+
+        })
+        .on("mouseout", function(){
+            info.text("");
+            d3.select(d3.event.target).classed("highlight", false);
         });
 
     // Labels for the total height of the bars:
@@ -92,6 +115,7 @@ function createBarGraph(){
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
         .attr("fill", "black");
+
 
     // Appending x-Axis:
     svg.append("g")
@@ -174,12 +198,16 @@ function updateBarGraph(){
         .transition();
 
     // Height of all data:
-    rects.duration(750).attr("y", function(d){
+    rects.duration(750)
+        .attr("y", function(d){
             return scaleY(d.y1);
         }).attr("height", function(d){
             return scaleY(d.y0)-scaleY(d.y1);
         }).style("fill", function(d, i){
             return pubColors[i];
+        })
+        .attr("title", function(d){
+            return d.y1- d.y0;
         });
 
     rects.style("fill", function(d, i){

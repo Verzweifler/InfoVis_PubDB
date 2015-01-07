@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1dc0b5e8-224a-4b40-bac3-b4eaf8251009" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/barGraph.js" afterPath="$PROJECT_DIR$/Web Files/barGraph.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/code.js" afterPath="$PROJECT_DIR$/Web Files/code.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/main.js" afterPath="$PROJECT_DIR$/Web Files/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Files/style.css" afterPath="$PROJECT_DIR$/Web Files/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InfoVis_PubDB.iws" />
@@ -34,10 +34,22 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Web Files/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1428">
-                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                <state vertical-scroll-proportion="-17.0" vertical-offset="1122" max-vertical-offset="1836">
+                  <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="code.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Web Files/code.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-3.8163266" vertical-offset="68" max-vertical-offset="4046">
+                  <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#722#1214#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -46,8 +58,8 @@
           <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5269168" vertical-offset="3570" max-vertical-offset="4386">
-                  <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.49461207" vertical-offset="952" max-vertical-offset="4862">
+                  <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -57,33 +69,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Web Files/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1853">
-                  <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
+                <state vertical-scroll-proportion="0.9096706" vertical-offset="742" max-vertical-offset="1700">
+                  <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="code.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Web Files/code.js">
+          <file leaf-file-name="barGraph.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="2923" max-vertical-offset="3536">
-                  <caret line="199" column="80" selection-start-line="199" selection-start-column="80" selection-end-line="199" selection-end-column="80" />
-                  <folding>
-                    <element signature="e#565#1057#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Web Files/main.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="5.65416" vertical-offset="631" max-vertical-offset="6732">
-                  <caret line="241" column="33" selection-start-line="241" selection-start-column="33" selection-end-line="241" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4862">
+                  <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -113,7 +113,6 @@
         <option value="$PROJECT_DIR$/Web Files/lib/main.js" />
         <option value="$PROJECT_DIR$/Web Files/edgeBundling.js" />
         <option value="$PROJECT_DIR$/Converter/converter.js" />
-        <option value="$PROJECT_DIR$/Web Files/style.css" />
         <option value="$PROJECT_DIR$/Web Files/index.html" />
         <option value="$PROJECT_DIR$/Web Files/stackedBarGraph.js" />
         <option value="$PROJECT_DIR$/Web Files/stackedBarGraph.html" />
@@ -122,6 +121,7 @@
         <option value="$PROJECT_DIR$/Web Files/code.js" />
         <option value="$PROJECT_DIR$/Web Files/main.js" />
         <option value="$PROJECT_DIR$/Web Files/barGraph.js" />
+        <option value="$PROJECT_DIR$/Web Files/style.css" />
       </list>
     </option>
   </component>
@@ -335,7 +335,9 @@
             <option name="myCanBeAbsent" value="false" />
             <option name="myId" value="UPDATED" />
             <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/code.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/index.html</PATH>
             <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/main.js</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/Web Files/style.css</PATH>
           </FILE-GROUP>
           <FILE-GROUP>
             <option name="myUpdateName" value="Created" />
@@ -658,7 +660,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420647159729</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Graph now filters for publication titles instead of author names, thus being able to detect &quot;others&quot;">
+      <created>1420650605416</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1420650605416</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -697,7 +705,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31334022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33764833" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32574975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32574975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -743,7 +751,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="created css file" />
     <MESSAGE value="Node Server Initial Commit" />
     <MESSAGE value="re-organized file structure" />
     <MESSAGE value="re-organized file structure++&#10;both json send to client side&#10;handling complete generation on server&#10;sending when keywords are found" />
@@ -768,11 +775,12 @@
     <MESSAGE value="Replaced Download-Text with a pdf icon" />
     <MESSAGE value="barGraph now consists of stacked bars." />
     <MESSAGE value="TRANSITIONS; BITCH!" />
-    <option name="LAST_COMMIT_MESSAGE" value="TRANSITIONS; BITCH!" />
+    <MESSAGE value="Graph now filters for publication titles instead of author names, thus being able to detect &quot;others&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph now filters for publication titles instead of author names, thus being able to detect &quot;others&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -824,7 +832,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#565#1057#0" expanded="false" />
+            <element signature="e#722#1214#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,7 +874,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#565#1057#0" expanded="false" />
+            <element signature="e#722#1214#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1112,14 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="895" max-vertical-offset="1853">
-          <caret line="101" column="6" selection-start-line="101" selection-start-column="6" selection-end-line="101" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Converter/node_modules/jquery/dist/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20043103" vertical-offset="36721" max-vertical-offset="156128">
@@ -1144,38 +1144,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Files/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1428">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/code.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2923" max-vertical-offset="3536">
-          <caret line="199" column="80" selection-start-line="199" selection-start-column="80" selection-end-line="199" selection-end-column="80" />
+        <state vertical-scroll-proportion="-3.8163266" vertical-offset="68" max-vertical-offset="4046">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <element signature="e#565#1057#0" expanded="false" />
+            <element signature="e#722#1214#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.65416" vertical-offset="631" max-vertical-offset="6732">
-          <caret line="241" column="33" selection-start-line="241" selection-start-column="33" selection-end-line="241" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.5270049" vertical-offset="1429" max-vertical-offset="7667">
+          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0" vertical-offset="1122" max-vertical-offset="1836">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Files/barGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5269168" vertical-offset="3570" max-vertical-offset="4386">
-          <caret line="229" column="32" selection-start-line="229" selection-start-column="32" selection-end-line="229" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4862">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Files/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9096706" vertical-offset="742" max-vertical-offset="1700">
+          <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
           <folding />
         </state>
       </provider>
