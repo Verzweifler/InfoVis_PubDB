@@ -5,8 +5,8 @@
 //var scaleX;
 //var scaleY;
 // Some necessary parameters:
-var w = 600;
-var h = 300;
+var w = 650;
+var h = 350;
 var paddingBars=2;
 var paddingSides = 25;
 var totalYears=0;
@@ -132,7 +132,7 @@ function createBarGraph(){
 
     var colorScale = d3.scale.ordinal()
         .range(pubColors)
-        .domain(["Gesamtmenge", "Nach Filter", "Ausgewählt"]);
+        .domain(["Dataset", "Filtered", "Selected"]);
 
     var legend = svg.selectAll(".legend")
         .data(colorScale.domain().slice())

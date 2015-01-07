@@ -36,9 +36,14 @@
 
 #barChartArea{
     display: inline-block;
+    /*float:left;*/
     border-color: black;
     border-style: solid;
     border-width: thin;
+}
+
+#filter{
+
 }
 
 .bar{
@@ -70,7 +75,26 @@
     border-width: thin;
 }
 
-#sidebarBar,
+#topRow{
+    display: inline-block;
+    width: 100%;
+}
+
+#barChartArea{
+    float:left;
+}
+
+#filter{
+    display: inline-block;
+    padding-left:30px;
+}
+
+#howTo{
+    padding-right:100px;
+    float: right;
+}
+
+
 #sidebarCircle{
      float:right;
      width:30%;
