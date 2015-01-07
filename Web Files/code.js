@@ -46,7 +46,7 @@ function filterPubJSON(){
         }
     });
 
-    //drawBarGraph(result);
+    drawBarGraph(result);
     var newCircle = buildEdgeBundleJson(result);
     createEdgeBundle(newCircle);
     return result;

@@ -342,7 +342,7 @@ function updateDetailView(node){
 	pub.enter().append("div").text(function(d) { return d.name+"; "; });
 	//pub.text(function(d) { return d.name; });
 
-	pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("(download)").attr("target","_blank");
+	pub.filter(function(d){return d.url.length != 0}).append("a").attr("href", function(d){return (d.url.length != 0 ?  "http://www.medien.ifi.lmu.de"+d.url[0] : "");}).html("\<img src=\"assets/pdf-icon.png\"\ height=\"17\">").attr("target","_blank");
 
 	// Remove old elements as needed.
 	//pub.exit().remove();
