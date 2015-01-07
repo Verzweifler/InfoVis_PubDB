@@ -14,7 +14,7 @@ var pubColors = [
 var allFilters = {
 	years: {from: minYear,
 			to: maxYear},
-	title: "",
+	titles: [],
 	keywords: [],
 	authors: [],
 	award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
@@ -380,7 +380,7 @@ function keywordsFilter(form){
 		allFilters.keywords = [];
 		var keyArray = form.keywords.value.split(",");
 		for(var i = 0; i < keyArray.length; i++){
-			allFilters.keywords.push(keyArray[i].trim());
+			allFilters.keywords.push(keyArray[i].trim().toLowerCase());
 		}
 	}
 	var filtered = filterPubJSON();
@@ -390,6 +390,52 @@ function keywordsFilter(form){
 function clearKeywordsFilter(form){
 	form.keywords.value = "";
 	allFilters.keywords = [];
+	var filtered = filterPubJSON();
+	update();
+}
+
+function titlesFilter(form){
+	if (form.titles.value == ""){
+		//alert("Hey! You didn't enter anything!")
+		allFilters.titles = [];
+	}
+	else{
+		allFilters.titles = [];
+		var titlesArray = form.titles.value.split(",");
+		for(var i = 0; i < titlesArray.length; i++){
+			allFilters.titles.push(titlesArray[i].trim().toLowerCase());
+		}
+	}
+	var filtered = filterPubJSON();
+	update();
+}
+
+function clearTitlesFilter(form){
+	form.titles.value = "";
+	allFilters.titles = [];
+	var filtered = filterPubJSON();
+	update();
+}
+
+function authorsFilter(form){
+	if (form.authors.value == ""){
+		//alert("Hey! You didn't enter anything!")
+		allFilters.authors = [];
+	}
+	else{
+		allFilters.authors = [];
+		var authorsArray = form.authors.value.split(",");
+		for(var i = 0; i < authorsArray.length; i++){
+			allFilters.authors.push(authorsArray[i].trim().toLowerCase());
+		}
+	}
+	var filtered = filterPubJSON();
+	update();
+}
+
+function clearAuthorsFilter(form){
+	form.authors.value = "";
+	allFilters.authors = [];
 	var filtered = filterPubJSON();
 	update();
 }
