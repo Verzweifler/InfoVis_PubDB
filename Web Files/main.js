@@ -34,6 +34,16 @@ var maxAuthors = 200;
 
 $(document).ready(function() {
 
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+			$("#keywordsButton").click();
+			$("#titlesButton").click();
+			$("#authorsButton").click();
+			event.preventDefault();
+			return false;
+		}
+	});
+
 	// Request "mortifier" asks for the data
 	$.get("http://localhost:3000/mortifier", function(data) {
 		if(data.bool){
@@ -86,9 +96,9 @@ $(document).ready(function() {
 
 function createEdgeBundle(coopJson){
 
-	var diameter = 960,
+	var diameter = 1020,
 		radius = diameter / 2,
-		innerRadius = radius - 160;
+		innerRadius = radius - 200;
 
 	var cluster = d3.layout.cluster()
 		.size([360, innerRadius])
@@ -445,5 +455,3 @@ function clearAuthorsFilter(form){
 }
 
 
-
-;

@@ -44,7 +44,7 @@
 						<form name="keywordForm">
 							<p><text>Keywords:</text><br/>
 								<input type="text" name="keywords">
-								<input type="button" value="Set" onClick="keywordsFilter(this.form)">
+								<input type="button" value="Set" onClick="keywordsFilter(this.form)" id="keywordsButton">
 								<input type="button" value="Clear" onClick="clearKeywordsFilter(this.form)">
 							</p>
 						</form>
@@ -53,7 +53,7 @@
 						<form name="titleForm">
 							<p><text>Title:</text><br/>
 								<input type="text" name="titles">
-								<input type="button" value="Set" onClick="titlesFilter(this.form)">
+								<input type="button" value="Set" onClick="titlesFilter(this.form)" id="titlesButton">
 								<input type="button" value="Clear" onClick="clearTitlesFilter(this.form)">
 							</p>
 						</form>
@@ -62,7 +62,7 @@
 						<form name="authorForm">
 							<p><text>Authors:</text><br/>
 								<input type="text" name="authors">
-								<input type="button" value="Set" onClick="authorsFilter(this.form)">
+								<input type="button" value="Set" onClick="authorsFilter(this.form)" id="authorsButton">
 								<input type="button" value="Clear" onClick="clearAuthorsFilter(this.form)">
 							</p>
 						</form>
@@ -87,20 +87,6 @@
 			</div>
 
 		</div>
-
-
-
-
-
-		<div id="visualisation">
-
-
-
-
-
-
-		</div>
-
 
 	</body>
 </html>
