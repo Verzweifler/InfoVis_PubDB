@@ -2,9 +2,11 @@
 var minYear = 1994;
 var maxYear = 2015;
 var pubColors = [
-	// all, remaining, specific
+	// all:
 	"rgb(0,0,255)",
+	// remaining:
 	"rgb(255,0,0)",
+	// specific:
 	"rgb(0,255,0)"
 ]
 
@@ -13,7 +15,6 @@ var allFilters = {
 	years: {from: minYear,
 			to: maxYear},
 	title: "",
-	description: "",
 	keywords: [],
 	authors: [],
 	award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
@@ -134,7 +135,6 @@ function createEdgeBundle(coopJson){
 		.on("click",clickFunction);
 
 	d3.select(self.frameElement).style("height", diameter + "px");
-
 
 
 	function clickFunction(d) {

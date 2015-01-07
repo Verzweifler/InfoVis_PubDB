@@ -108,6 +108,28 @@ function createBarGraph(){
         .attr("transform", "translate(" + paddingSides + ", "+ "0)")
         .call(yAxis);
 
+    var colorScale = d3.scale.ordinal()
+        .range(pubColors)
+        .domain(["Gesamtmenge", "Nach Filter", "Ausgewählt"]);
+
+    var legend = svg.selectAll(".legend")
+        .data(colorScale.domain().slice())
+        .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", function(d, i){
+            return "translate(50, " + (20+i*20) + ")";
+        });
+
+    legend.append("rect")
+        .attr("height", 18)
+        .attr("width", 18)
+        .style("fill", colorScale);
+
+    legend.append("text")
+        .attr("x", 20)
+        .attr("y", 8)
+        .attr("dy", ".35em")
+        .text(function(d) { return d; });
 
 
     // Adding a slider for selecting specific years:
@@ -126,7 +148,6 @@ function createBarGraph(){
         allFilters.years.to=data.values.max;
 
         update();
-
     });
 
 }
@@ -151,10 +172,11 @@ function updateBarGraph(){
     //Joining new data to existing data
     var rects = allHulls.selectAll("rect")
         .data(function(d){return d.numbers;})
-        .attr("class", "update");
+        .attr("class", "update")
+        .transition();
 
     // Height of all data:
-    rects.attr("y", function(d){
+    rects.duration(750).attr("y", function(d){
             return scaleY(d.y1);
         }).attr("height", function(d){
             return scaleY(d.y0)-scaleY(d.y1);
@@ -167,7 +189,9 @@ function updateBarGraph(){
     });
 
     // Remove unused data
-    rects.exit().remove();
+    allHulls.selectAll("rect")
+        .data(function(d){return d.numbers;})
+        .attr("class", "update").exit().remove();
 }
 
 function getBarDataset(){
