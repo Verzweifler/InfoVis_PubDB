@@ -20,67 +20,80 @@
 	<body>
 		<img src="assets/loading.gif" style="position: relative; display: block; top: 40%; margin: 0 auto;" alt="loading" id="loadingImage">
 
-		<div id="sidebar">
-			<div id="filter">
-				<h2>Filter:</h2>
-				<div>
-					<p>Awards:
-					<select id="awardsSelection" onchange="awardFilter(this)">
-						<option value="case0">Don't filter for Awards</option>
-						<option value="case1">Show Publications with Awards</option>
-						<option value="case2">Show Publications with no Awards</option>
-					</select>
-					</p>
-				</div>
-				<div>
-					<form name="keywordForm">
-						<p>Keywords: <input type="text" name="keywords">
-							<input type="button" value="Set" onClick="keywordsFilter(this.form)">
-							<input type="button" value="Clear" onClick="clearKeywordsFilter(this.form)">
-						</p>
-					</form>
-				</div>
-				<div>
-					<form name="titleForm">
-						<p>Title: <input type="text" name="titles">
-							<input type="button" value="Set" onClick="titlesFilter(this.form)">
-							<input type="button" value="Clear" onClick="clearTitlesFilter(this.form)">
-						</p>
-					</form>
-				</div>
-				<div>
-					<form name="authorForm">
-						<p>Authors: <input type="text" name="authors">
-							<input type="button" value="Set" onClick="authorsFilter(this.form)">
-							<input type="button" value="Clear" onClick="clearAuthorsFilter(this.form)">
-						</p>
-					</form>
-				</div>
 
-
-
-			</div>
-			<div id="detail">
-				<h2>Detail View:</h2>
-				<div id="detail--auth"><h3>Author:</h3><div>Currently no author selected</div></div>
-				<div id="detail--others" style="display: none;"><h3>Others:</h3><p id="detail--others-list"></p></div>
-				<div id="detail--coauth"><h3>CoAuthors:</h3><p id="detail--coauth-list"></p></div>
-				<div id="detail--pub"><h3>Publications:</h3><p id="detail--pub-list"></p></div>
-			</div>
-		</div>
-
-
-
-		<div id="visualisation">
+		<div>
 			<h2>BarArea ahead:</h2>
 			<div id="barChartArea">
 				<div id="barChart"></div>
 				<div id="barSlider"></div>
 			</div>
 
+			<div id="sidebarBar">
+				<div id="filter">
+					<h2>Filter:</h2>
+					<div>
+						<p>Awards:
+							<select id="awardsSelection" onchange="awardFilter(this)">
+								<option value="case0">Don't filter for Awards</option>
+								<option value="case1">Show Publications with Awards</option>
+								<option value="case2">Show Publications with no Awards</option>
+							</select>
+						</p>
+					</div>
+					<div>
+						<form name="keywordForm">
+							<p>Keywords: <input type="text" name="keywords">
+								<input type="button" value="Set" onClick="keywordsFilter(this.form)">
+								<input type="button" value="Clear" onClick="clearKeywordsFilter(this.form)">
+							</p>
+						</form>
+					</div>
+					<div>
+						<form name="titleForm">
+							<p>Title: <input type="text" name="titles">
+								<input type="button" value="Set" onClick="titlesFilter(this.form)">
+								<input type="button" value="Clear" onClick="clearTitlesFilter(this.form)">
+							</p>
+						</form>
+					</div>
+					<div>
+						<form name="authorForm">
+							<p>Authors: <input type="text" name="authors">
+								<input type="button" value="Set" onClick="authorsFilter(this.form)">
+								<input type="button" value="Clear" onClick="clearAuthorsFilter(this.form)">
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div>
 			<h2>Author Circle:</h2>
 			<div id="circle"></div>
+
+			<div id="sidebarCircle">
+				<div id="detail">
+					<h2>Detail View:</h2>
+					<div id="detail--others--explained" style="display: none;"></div>
+					<div id="detail--auth"><h3>Author:</h3><div>Currently no author selected</div></div>
+					<div id="detail--others" style="display: none;"><h3>Others:</h3><p id="detail--others-list"></p></div>
+					<div id="detail--coauth"><h3>CoAuthors:</h3><p id="detail--coauth-list"></p></div>
+					<div id="detail--pub"><h3>Publications:</h3><p id="detail--pub-list"></p></div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+		<div id="visualisation">
+
+
+
+
 
 
 		</div>

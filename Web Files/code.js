@@ -235,6 +235,10 @@ function buildEdgeBundleJson(pubJSONArray){
         others.totalPublications = others.pub.length;
 
         edgeReduced.push(others);
+
+        $( "#detail--others--explained" ).css("display","").text("Every author with less then "+limit+" publications is currently listed under \"Others\" for a better visualisation.");
+    }else{
+        $( "#detail--others--explained" ).css( "display","none");
     }
 
     allFilters.minNumberOfPublications = limit;

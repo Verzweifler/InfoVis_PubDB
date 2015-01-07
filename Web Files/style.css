@@ -30,7 +30,7 @@
 .link--source,
 .link--target {
     stroke-opacity: 1;
-    stroke-width: 2px;
+    stroke-width: 3px;
     stroke: #2ca02c;
 }
 
@@ -66,19 +66,11 @@
     border-width: thin;
 }
 
-#visualisation{
-    float:left;
-    width:70%;
-}
-
-#sidebar{
-    float:right;
-    width:30%;
-}
-
-#filter{
-    height:20%;
-}
+#sidebarBar,
+#sidebarCircle{
+     float:right;
+     width:30%;
+ }
 
 #detail--coauth-list,
 #detail--others-list,
