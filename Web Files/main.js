@@ -10,7 +10,7 @@ var allFilters = {
 	keywords: [],
 	authors: [],
 	award: {	// We can't just put a boolean here! Otherwise we would always filter for awards
-		filterForAward:true,	// True, if we want to filter for awards
+		filterForAward:false,	// True, if we want to filter for awards
 		filterValue:false		// Value of the filter, if set
 	},
 	minNumberOfPublications: 2
@@ -99,6 +99,7 @@ function createEdgeBundle(coopJson){
 		.radius(function(d) { return d.y; })
 		.angle(function(d) { return d.x / 180 * Math.PI; });
 
+	d3.select("#circle").select("svg").remove();
 	var svg = d3.select("#circle").append("svg")
 		.attr("width", diameter)
 		.attr("height", diameter)
@@ -347,4 +348,41 @@ function updateDetailView(node){
 	// Remove old elements as needed.
 	//pub.exit().remove();
 	//UPDATE COAUTHORS END
+}
+
+//Function called if award filter selection is made(changed)
+function awardFilter(e) {
+	var value = e.options[e.selectedIndex].value;
+	if(value == "case0"){
+	  allFilters.award.filterForAward = false;
+	}else if(value == "case1"){
+		allFilters.award.filterForAward = true;
+		allFilters.award.filterValue = true;
+	}else if(value == "case2"){
+		allFilters.award.filterForAward = true;
+		allFilters.award.filterValue = false;
+	}
+
+	var filtered = filterPubJSON();
+}
+
+function keywordsFilter(form){
+	if (form.keywords.value == ""){
+		//alert("Hey! You didn't enter anything!")
+		allFilters.keywords = [];
+	}
+	else{
+		allFilters.keywords = [];
+		var keyArray = form.keywords.value.split(",");
+		for(var i = 0; i < keyArray.length; i++){
+			allFilters.keywords.push(keyArray[i].trim());
+		}
+	}
+	var filtered = filterPubJSON();
+}
+
+function clearKeywordsFilter(form){
+	form.keywords.value = "";
+	allFilters.keywords = [];
+	var filtered = filterPubJSON();
 }

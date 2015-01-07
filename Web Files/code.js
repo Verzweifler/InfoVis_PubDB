@@ -41,6 +41,24 @@ function filterPubJSON(){
                 pushThis=false;
             }
         }
+        if(allFilters.keywords.length != 0){
+            if(actPub.keywords.length == 0){
+                pushThis=false;
+            }else{
+                pushThis=false;
+                actPub.keywords.forEach(function(actKeyword){
+                    allFilters.keywords.forEach(function(filterKeyword){
+                        if(actKeyword.indexOf(filterKeyword) > -1){
+                            pushThis = true;
+                        }
+                    });
+                });
+
+
+            }
+        }
+
+
         if(pushThis) {
             result.push(actPub);
         }
@@ -49,6 +67,8 @@ function filterPubJSON(){
     drawBarGraph(result);
     var newCircle = buildEdgeBundleJson(result);
     createEdgeBundle(newCircle);
+    console.log("result");
+    console.log(result);
     return result;
 }
 

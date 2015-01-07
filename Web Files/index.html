@@ -23,6 +23,30 @@
 		<div id="sidebar">
 			<div id="filter">
 				<h2>Filter:</h2>
+				<div>
+					<p>Awards:
+					<select id="awardsSelection" onchange="awardFilter(this)">
+						<option value="case0">Don't filter for Awards</option>
+						<option value="case1">Show Publications with Awards</option>
+						<option value="case2">Show Publications with no Awards</option>
+					</select>
+					</p>
+				</div>
+				<div>
+					<form name="keywordForm">
+						<p>Keywords: <input type="text" name="keywords">
+							<input type="button" value="Set" onClick="keywordsFilter(this.form)">
+							<input type="button" value="Clear" onClick="clearKeywordsFilter(this.form)">
+						</p>
+					</FORM>
+				</div>
+				<div>
+					<p>Title:
+
+					</p>
+				</div>
+
+
 
 			</div>
 			<div id="detail">
