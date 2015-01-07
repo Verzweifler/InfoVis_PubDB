@@ -381,8 +381,6 @@ function awardFilter(e) {
 		allFilters.award.filterForAward = true;
 		allFilters.award.filterValue = false;
 	}
-
-	var filtered = filterPubJSON();
 	update();
 }
 
@@ -398,14 +396,12 @@ function keywordsFilter(form){
 			allFilters.keywords.push(keyArray[i].trim().toLowerCase());
 		}
 	}
-	var filtered = filterPubJSON();
 	update();
 }
 
 function clearKeywordsFilter(form){
 	form.keywords.value = "";
 	allFilters.keywords = [];
-	var filtered = filterPubJSON();
 	update();
 }
 
@@ -421,14 +417,12 @@ function titlesFilter(form){
 			allFilters.titles.push(titlesArray[i].trim().toLowerCase());
 		}
 	}
-	var filtered = filterPubJSON();
 	update();
 }
 
 function clearTitlesFilter(form){
 	form.titles.value = "";
 	allFilters.titles = [];
-	var filtered = filterPubJSON();
 	update();
 }
 
@@ -444,14 +438,12 @@ function authorsFilter(form){
 			allFilters.authors.push(authorsArray[i].trim().toLowerCase());
 		}
 	}
-	var filtered = filterPubJSON();
 	update();
 }
 
 function clearAuthorsFilter(form){
 	form.authors.value = "";
 	allFilters.authors = [];
-	var filtered = filterPubJSON();
 	update();
 }
 
