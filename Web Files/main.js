@@ -143,7 +143,6 @@ function createEdgeBundle(coopJson){
 		var clickedAgain = false;
 		if(currentlySelectedNode != null){ //if one node allready selected
 			if(currentlySelectedNode.name == d.name){ //check if same node is klicked
-				//console.log("selber knoten");
 				clickedAgain = true;
 				currentlySelectedNode = null;
 			}else{  //or set new selected node
@@ -232,8 +231,6 @@ function createEdgeBundle(coopJson){
 
 		// For each import, construct a link from the source to target node.
 		nodes.forEach(function(d) {
-			//console.log("Name:"+d.name);
-			//console.log(d.coAuthors);
 			var othersValue = 0;
 			if (d.coAuthors) d.coAuthors.forEach(function(i) {
 				if(map[i]){
@@ -252,8 +249,6 @@ function createEdgeBundle(coopJson){
 }
 
 function updateDetailView(node){
-	console.log("node");
-	console.log(node);
 	var newAuthorData = [];
 	var newCoAuthorsData = [];
 	var newPubData = [];

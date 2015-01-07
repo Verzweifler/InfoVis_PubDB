@@ -18,8 +18,6 @@ function createBarGraph(){
 
     var dataset = getBarDataset();
 
-    console.log(dataset);
-
     totalYears= dataset.length;
 
     // Preparing the scales, so the bars fit in width and height: X-Axis: Years
@@ -85,7 +83,7 @@ function createBarGraph(){
             return d.numbers[1].y1;
         })
         .attr("text-anchor", "middle")
-        .attr("x", function(d, i) {
+        .attr("x", function(d) {
             return scaleX(d.year) + (w / totalYears) / 2;
         })
         .attr("y", function(d) {
@@ -195,7 +193,7 @@ function updateBarGraph(){
 }
 
 function getBarDataset(){
-    var dataset = new Array();
+    var dataset = [];
     var yearNow = new Date().getFullYear();
 
     // Read all Data:
@@ -208,7 +206,7 @@ function getBarDataset(){
                 year: d.year,
                 // all, remaining, specific
                 numbers: [{y0:0, y1:0}, {y0:0, y1:0}, {y0:0, y1:0}]
-            }
+            };
 
         // Writing the actual data:
         dataset[index].numbers[0].y1++;
@@ -229,14 +227,12 @@ function getBarDataset(){
         filteredJSON.forEach(function(d){
             var index = yearNow-parseInt(d.year);
 
-            // Only count stuff from the selected author:
-            var selected=false;
-            d.authors.forEach(function(actAuthor){
-                if(actAuthor.name == currentlySelectedNode.key)
-                    selected=true;
+            var addThis = false;
+            currentlySelectedNode.pub.forEach(function(actPub){
+                if(actPub.name == d.title.name)
+                    addThis=true;
             });
-
-            if(selected)
+            if(addThis)
             // Writing the actual data:
                 dataset[index].numbers[2].y1++;
         });

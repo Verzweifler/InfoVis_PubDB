@@ -198,12 +198,6 @@ function buildEdgeBundleJson(pubJSONArray){
 
 
     if(counter > 0){//falls eins weggefallen ist, füg den "Others" eintrag hinzu
-        //console.log(others);
-        //console.log("Authors: "+others.authors.length);
-        //console.log("CoAuthors: "+others.coAuthors.length);
-        //console.log("Allgemein Authors: "+ json.length);
-        //var x = json.length-lengthCounter;
-        //console.log("Dif: "+ x);
 
         //Add "Others" to coAuthors if they were reduced
         others.coAuthors.forEach(function(author){
