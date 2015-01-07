@@ -4,10 +4,15 @@
 
 function update(){
     currentlySelectedNode = null;
+    updateDetailView(currentlySelectedNode);
     filteredJSON = filterPubJSON();
-    var edge = buildEdgeBundleJson(filteredJSON);
-    createEdgeBundle(edge);
     updateBarGraph();
+    if(filteredJSON.length != 0){
+        var edge = buildEdgeBundleJson(filteredJSON);
+        createEdgeBundle(edge);
+    }else{
+        d3.select("#circle").select("svg").remove();
+    }
 }
 
 /**
@@ -49,6 +54,7 @@ function filterPubJSON(){
                 pushThis=false;
             }
         }
+        //Keywords Filter
         if(allFilters.keywords.length != 0 && pushThis){
             if(actPub.keywords.length == 0){
                 pushThis=false;
@@ -56,7 +62,7 @@ function filterPubJSON(){
                 pushThis=false;
                 actPub.keywords.forEach(function(actKeyword){
                     allFilters.keywords.forEach(function(filterKeyword){
-                        if(actKeyword.indexOf(filterKeyword) > -1){
+                        if(actKeyword.toLowerCase().indexOf(filterKeyword) > -1){
                             pushThis = true;
                         }
                     });
@@ -64,6 +70,26 @@ function filterPubJSON(){
 
 
             }
+        }
+        //Titles Filter
+        if(allFilters.titles.length != 0 && pushThis){
+            pushThis=false;
+            allFilters.titles.forEach(function(titleKeyword){
+                if(actPub.title.name.toLowerCase().indexOf(titleKeyword) > -1){
+                    pushThis = true;
+                }
+            });
+        }
+        //Authors Filter
+        if(allFilters.authors.length != 0 && pushThis){
+            pushThis=false;
+            actPub.authors.forEach(function(actAuthor){
+                allFilters.authors.forEach(function(filterAuthor){
+                    if(actAuthor.name.toLowerCase().indexOf(filterAuthor) > -1){
+                        pushThis = true;
+                    }
+                });
+            });
         }
 
 
