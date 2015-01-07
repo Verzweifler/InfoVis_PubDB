@@ -32,7 +32,7 @@
 				<div id="filter">
 					<h2>Filter:</h2>
 					<div>
-						<p>Awards:
+						<p><text>Awards:</text><br/>
 							<select id="awardsSelection" onchange="awardFilter(this)">
 								<option value="case0">Don't filter for Awards</option>
 								<option value="case1">Show Publications with Awards</option>
@@ -42,7 +42,8 @@
 					</div>
 					<div>
 						<form name="keywordForm">
-							<p>Keywords: <input type="text" name="keywords">
+							<p><text>Keywords:</text><br/>
+								<input type="text" name="keywords">
 								<input type="button" value="Set" onClick="keywordsFilter(this.form)">
 								<input type="button" value="Clear" onClick="clearKeywordsFilter(this.form)">
 							</p>
@@ -50,7 +51,8 @@
 					</div>
 					<div>
 						<form name="titleForm">
-							<p>Title: <input type="text" name="titles">
+							<p><text>Title:</text><br/>
+								<input type="text" name="titles">
 								<input type="button" value="Set" onClick="titlesFilter(this.form)">
 								<input type="button" value="Clear" onClick="clearTitlesFilter(this.form)">
 							</p>
@@ -58,7 +60,8 @@
 					</div>
 					<div>
 						<form name="authorForm">
-							<p>Authors: <input type="text" name="authors">
+							<p><text>Authors:</text><br/>
+								<input type="text" name="authors">
 								<input type="button" value="Set" onClick="authorsFilter(this.form)">
 								<input type="button" value="Clear" onClick="clearAuthorsFilter(this.form)">
 							</p>

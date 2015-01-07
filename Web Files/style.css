@@ -19,19 +19,19 @@
 .node--source,
 .node--target{
     font-weight: 700;
-    fill: #2ca02c;
+    fill: #d62728;
 }
 
 .node--selected{
     font-weight: 700;
-    fill: #532ca0;
+    fill: #2ca02c;
 }
 
 .link--source,
 .link--target {
     stroke-opacity: 1;
     stroke-width: 3px;
-    stroke: #2ca02c;
+    stroke: #d62728;
 }
 
 #barChartArea{

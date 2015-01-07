@@ -3,11 +3,11 @@ var minYear = 1994;
 var maxYear = 2015;
 var pubColors = [
 	// all:
-	"rgb(0,0,255)",
+	"steelblue",
 	// remaining:
-	"rgb(255,0,0)",
+	"#d62728",
 	// specific:
-	"rgb(0,255,0)"
+	"#2ca02c"
 ]
 
 // Reflects set filters
@@ -443,3 +443,7 @@ function clearAuthorsFilter(form){
 	var filtered = filterPubJSON();
 	update();
 }
+
+
+
+;
