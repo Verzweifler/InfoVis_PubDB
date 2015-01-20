@@ -46,7 +46,7 @@ $(document).ready(function() {
 	});
 
 	// Request "mortifier" asks for the data
-	$.get("http://localhost:3000/mortifier", function(data) {
+	$.get("http://nodejs-pubdbfw.rhcloud.com//mortifier", function(data) {
 		if(data.bool){
 			// Publication format:
 			/*
