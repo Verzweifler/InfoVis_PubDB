@@ -19,7 +19,7 @@ var converter = new pubdb();
 
 var app = express();
 app.use(cors()); // allow cross-origin resource-sharing
-app.use(express.static(__dirname + '/web files'));
+app.use(express.static(process.env.OPENSHIFT_REPO_DIR + '/public'));
 var router = express.Router();
 
 // pubDB URL
@@ -49,7 +49,7 @@ router.get('/base', function(req, res) {
 
 
 router.get('/app', function(req, res) {
-	res.sendFile(__dirname + '/web files/index.html');
+	res.sendFile(process.env.OPENSHIFT_REPO_DIR + '/public/index.html');
 });
 
 // return publications
